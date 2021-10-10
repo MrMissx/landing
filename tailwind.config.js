@@ -2,10 +2,15 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      height : {
+        "30v": "30vh",
+        "35v": "35vh",
+      }
+    },
   },
   variants: {
-    extend: {},
+    animation: ['motion-safe'],
   },
   plugins: [],
 }

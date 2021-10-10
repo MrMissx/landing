@@ -18,14 +18,16 @@ const Home: NextPage = () => {
                 className="rounded-full border border-gray-100 shadow-sm"
             />
             <div className="md:ml-8 mt-8">
-                <p className="text-gray-500 hover:text-black md:text-xl text-l">
-                    Hi there 👋🏻! My name is
-                </p>
-                <p className="md:text-3xl text-xl"><b>Gaung</b> Ramadhan</p>
-                <p className="text-gray-500 hover:text-black md:text-xl text-lg">Mr.Miss</p>
-                <p className="text-sm md:text-base">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nihil asperiores animi, illum dolor cum?
-                </p>
+                <div className="px-10">
+                    <p className="text-gray-500 hover:text-black md:text-xl text-l">
+                        Hi there 👋🏻! My name is
+                    </p>
+                    <p className="md:text-3xl text-xl"><b>Gaung</b> Ramadhan</p>
+                    <p className="text-gray-500 hover:text-black md:text-xl text-lg">Mr.Miss</p>
+                    <p className="text-sm md:text-base">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nihil asperiores animi, illum dolor cum?
+                    </p>
+                </div>
                 <Social />
                 <div>
                     <ul className="flex justify-evenly">

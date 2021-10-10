@@ -1,6 +1,13 @@
 import { ReactNode } from 'react';
-import Project from './projectSchema'
 
+export interface Project {
+    _id: number
+    name: string,
+    description: string,
+    photo: string,
+    link?: string,
+    __v: number
+}
 
 export interface MetaTag {
     title: string
@@ -16,5 +23,5 @@ export interface LayoutProps {
 }
 
 export interface ProjectProps {
-    Project: any
+    projects: Array<Project>
 }
