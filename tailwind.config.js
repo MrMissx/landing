@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       height : {
-        "30v": "30vh",
-        "35v": "35vh",
+        '30v': '30vh',
+        '35v': '35vh',
+        '40v': '40vh'
       }
     },
   },

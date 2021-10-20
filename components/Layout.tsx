@@ -1,6 +1,8 @@
+import Head from 'next/head'
+
 import Header from './Header'
 import Footer from './Footer'
-import HeadContent from './HeadContent'
+import Metadata from './Metadata'
 import { LayoutProps } from '../models/types'
 
 
@@ -8,7 +10,10 @@ export default function Layout(props: LayoutProps) {
     const { children, pageTitle } = props
     return (
         <>
-            <HeadContent title={pageTitle}/>
+            <Metadata/>
+            <Head>
+                <title>pageTitle</title>
+            </Head>
             <Header name={pageTitle}/>
             <div>{children}</div>
             <Footer/>

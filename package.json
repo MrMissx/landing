@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-port",
+  "name": "portofolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,8 @@
     "mongoose": "^6.0.9",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sharp": "^0.29.1"
   },
   "devDependencies": {
     "@types/react": "17.0.27",
