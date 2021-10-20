@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 
-const Projects = new mongoose.Schema({
+const ProjectSchema = new mongoose.Schema({
     name: String,
     description: String,
     link: String,
@@ -9,4 +9,4 @@ const Projects = new mongoose.Schema({
     }
 )
 
-export default mongoose.model("Project", Projects)
+export default mongoose.models.Project || mongoose.model("Project", ProjectSchema)

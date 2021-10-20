@@ -12,7 +12,7 @@ export default function Layout(props: LayoutProps) {
         <>
             <Metadata/>
             <Head>
-                <title>pageTitle</title>
+                <title>{ pageTitle }</title>
             </Head>
             <Header name={pageTitle}/>
             <div>{children}</div>
