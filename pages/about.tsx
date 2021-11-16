@@ -10,12 +10,12 @@ export default function About(props: AboutProps) {
 
     return (
         <Layout pageTitle="About Me">
-            <div className="mx-14 md:mx-28 lg:mx-52">
+            <div className="mx-14 md:mx-28 lg:mx-52 font-light text-sm lg:text-base">
                 {data.content.map((text, idx) => {
                     return (
-                        <p key={ idx } className="font-light text-base lg:text-lg" style={{ textIndent: 30 }}>{ text } <br></br><br></br></p>
-                    )
-                })}
+                        <p key={ idx } >{ text } <br/><br/></p>
+                        )
+                    })}
             </div>
         </Layout>
     )
