@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -18,7 +19,7 @@ config.autoAddCss = false
 library.add(faGithub, faTwitter, faLinkedin, faInstagram, faTelegram, faAngleUp)
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
     const [ showButton, setJumpButton] = useState(false)
     const jumpToTop = () => {
         window.scrollTo({
@@ -39,15 +40,24 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <Component {...pageProps} />
-            {showButton && (
-                <button
-                    onClick={jumpToTop}
-                    className="fixed bottom-0 right-0 rounded-full h-8 w-8 flex items-center justify-center bg-blue-300 mb-5 mr-5"
-                >
-                    <FontAwesomeIcon icon={['fas', 'angle-up']} />
-                </button>
-            )}
+            <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+                pageInitial: {
+                    opacity: 0,
+                },
+                pageAnimate: {
+                    opacity: 1,
+                },
+            }}>
+                <Component {...pageProps} />
+                {showButton && (
+                    <button
+                        onClick={jumpToTop}
+                        className="fixed bottom-0 right-0 rounded-full h-8 w-8 flex items-center justify-center bg-blue-300 mb-5 mr-5"
+                    >
+                        <FontAwesomeIcon icon={['fas', 'angle-up']} />
+                    </button>
+                )}
+            </motion.div>
         </>
     )
 }

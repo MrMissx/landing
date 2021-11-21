@@ -1,3 +1,5 @@
+import Animation from '../components/animation'
+import Tools from '../components/Tools'
 import Layout from '../components/Layout'
 
 import dbConnect from "../models"
@@ -13,10 +15,11 @@ export default function About(props: AboutProps) {
             <div className="mx-14 md:mx-28 lg:mx-52 font-light text-sm lg:text-base">
                 {data.content.map((text, idx) => {
                     return (
-                        <p key={ idx } >{ text } <br/><br/></p>
-                        )
-                    })}
+                        <Animation.SlideLeft key={ idx } delay={0.2} custom={idx}>{ text } <br/><br/></Animation.SlideLeft>
+                    )
+                })}
             </div>
+            <Tools />
         </Layout>
     )
 }

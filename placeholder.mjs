@@ -60,9 +60,11 @@ insert(mainContent)
 let aboutContent = new about({  // About me page
     _id: 1,  // _id is mandatory to be 1
     content: [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio vitae laboriosam reiciendis saepe rem atque ea veritatis nesciunt modi aspernatur?",
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ad!",
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla in quos hic blanditiis corrupti atque.",
+        "Hello there! Greetings everyone",
+        "Thank you for visiting my website! seems like you're curious about me huh?😁",
+        "Ok bring it up.",
+        "You all can call me Gaung.",
+        "I'm a student majoring Computer Science from Indonesia. I love to code and I love to learn new things. just so you know, this is my first website using React and Tailwind.",
     ]
 });
 
