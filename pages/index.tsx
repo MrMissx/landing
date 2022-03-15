@@ -20,7 +20,7 @@ export default function Home(props: MainProps) {
                 <title>Mr.Miss</title>
             </Head>
             <main>
-                <motion.div className="flex flex-col md:flex-row items-center justify-center h-screen mx-20"
+                <motion.div className="flex flex-col md:flex-row items-center justify-center h-screen md:mx-20 mx-10"
                 initial="hidden" animate="visible" variants={{
                     hidden: {
                         opacity: 0,
@@ -43,7 +43,7 @@ export default function Home(props: MainProps) {
                             className="rounded-full border border-gray-100 shadow-sm"
                         />
                     </div>
-                    <div className="md:ml-8 mt-8">
+                    <div className="sm:ml-8 mt-8">
                         <div className="px-10">
                             <Animation.SlideLeft delay={0.4}>
                                 <p className="text-gray-500 hover:text-black md:text-xl text-l">
@@ -57,7 +57,7 @@ export default function Home(props: MainProps) {
                                 <p className="text-gray-500 hover:text-black md:text-xl text-sm rounded-full bg-pink-200 w-max px-3 py-px">Mr.Miss</p>
                             </Animation.SlideLeft>
                             <Animation.SlideLeft delay={1}>
-                                <p className="mt-1 text-sm md:text-base" style={{ whiteSpace: "pre"}}>{ renderText(data.about) }</p>
+                                <p className="mt-1 text-sm md:text-base" dangerouslySetInnerHTML={{ __html: renderText(data.about) }} />
                             </Animation.SlideLeft>
                         </div>
 
