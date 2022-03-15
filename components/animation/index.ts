@@ -1,5 +1,6 @@
 import FadeIn from "./FadeIn"
 import SlideLeft from "./SlideLeft"
 
-export default { FadeIn, SlideLeft }
+const Animation = { FadeIn, SlideLeft }
 
+export default Animation
