@@ -1,6 +1,8 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './pages/**/*.tsx',
+    './components/**/*.tsx',
+  ],
   theme: {
     extend: {
       height : {
@@ -9,9 +11,6 @@ module.exports = {
         '40v': '40vh'
       }
     },
-  },
-  variants: {
-    animation: ['motion-safe'],
   },
   plugins: [],
 }
