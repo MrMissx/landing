@@ -25,7 +25,7 @@ export default function About(props: AboutProps) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     await dbConnect()
     const data = await AboutSchema.findOne({ _id: 1 })
     return { props: { data: data.toObject() } }
