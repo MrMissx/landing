@@ -12,7 +12,7 @@ import Metadata from '../components/Metadata'
 import Social from '../components/Social'
 
 
-const Home: NextPage = (props: MainProps) => {
+const Home: NextPage = (props) => {
     const { data } = props
     return (
         <>
@@ -58,7 +58,7 @@ const Home: NextPage = (props: MainProps) => {
                                 <p className="text-gray-500 hover:text-black md:text-xl text-sm rounded-full bg-pink-200 w-max px-3 py-px">Mr.Miss</p>
                             </Animation.SlideLeft>
                             <Animation.SlideLeft delay={1}>
-                                <p className="text-sm md:text-base">{ data.about }</p>
+                                <p className="mt-1 text-sm md:text-base">{ data.about }</p>
                             </Animation.SlideLeft>
                         </div>
 
