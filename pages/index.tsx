@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -10,10 +9,10 @@ import mainSchema from '../models/mainSchema'
 import { MainProps } from '../models/types'
 import Metadata from '../components/Metadata'
 import Social from '../components/Social'
+import { renderText } from '../utils'
 
-
-const Home: NextPage = (props) => {
-    const { data } = props
+export default function Home(props: MainProps) {
+    const { data } = props;
     return (
         <>
             <Metadata />
@@ -58,7 +57,7 @@ const Home: NextPage = (props) => {
                                 <p className="text-gray-500 hover:text-black md:text-xl text-sm rounded-full bg-pink-200 w-max px-3 py-px">Mr.Miss</p>
                             </Animation.SlideLeft>
                             <Animation.SlideLeft delay={1}>
-                                <p className="mt-1 text-sm md:text-base">{ data.about }</p>
+                                <p className="mt-1 text-sm md:text-base" style={{ whiteSpace: "pre"}}>{ renderText(data.about) }</p>
                             </Animation.SlideLeft>
                         </div>
 
@@ -94,11 +93,9 @@ const Home: NextPage = (props) => {
     )
 }
 
-export default Home
 
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
     await dbConnect()
     const res = await mainSchema.findOne({_id: 1})
     return { props: { data: res.toObject() } }
-}
+}   
