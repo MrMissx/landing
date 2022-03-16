@@ -24,6 +24,8 @@ export default function Project(props: ProjectProps) {
                                             layout="fill"
                                             objectFit="cover"
                                             className="rounded"
+                                            placeholder="blur"
+                                            blurDataURL="/loadingPlaceholder.gif"
                                             />
                                     </div>
                                     <div className="px-6 py-4 mb-6 flex flex-col">
