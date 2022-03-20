@@ -5,7 +5,7 @@ export default function Footer() {
         <Animation.FadeIn>
             <footer className="mt-10">
                 <div className="text-center mb-6">
-                    <p>© 2021 Mr.Miss | All right reserved</p>
+                    <p>© 2022 Mr.Miss | All right reserved</p>
                     <p>Made With 💖</p>
                 </div>
             </footer>
