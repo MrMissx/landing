@@ -16,7 +16,7 @@ function sha256Hash(str: string): string {
     return crypto.createHash("sha256").update(str).digest("hex");
 }
 
-export function verifyAuth(req: NextApiRequest, res: NextApiResponse): boolean {
+export function verifyAuth(req: NextApiRequest, res: NextApiResponse, respond: boolean = true): boolean {
     try {
         if (req.headers.authorization) {
             const token = req.headers.authorization.split(" ");
@@ -26,6 +26,8 @@ export function verifyAuth(req: NextApiRequest, res: NextApiResponse): boolean {
         res.status(401).json({ status: "ERROR", message: "Unauthorized" });
         return false;
     }
-    res.status(401).json({ status: "ERROR", message: "Unauthorized" });
+    if(respond){
+        res.status(401).json({ status: "ERROR", message: "Unauthorized" });
+    }
     return false;
 }

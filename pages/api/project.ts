@@ -4,11 +4,11 @@ import dbConnect from "../../models";
 import projectSchema from "../../models/projectSchema";
 import { verifyAuth } from "../../models/checkCreds";
 
-async function updateDB(
+async function updateProject(
     req: NextApiRequest,
     res: NextApiResponse
 ): Promise<void> {
-    if (!verifyAuth) return;
+    if (!verifyAuth(req, res)) return;
 
     await dbConnect();
     projectSchema.findOneAndUpdate(
@@ -28,11 +28,11 @@ async function updateDB(
     );
 }
 
-async function insertDB(
+async function createProject(
     req: NextApiRequest,
     res: NextApiResponse
 ): Promise<void> {
-    if (!verifyAuth) return;
+    if (!verifyAuth(req, res)) return;
 
     await dbConnect();
     const newProject = new projectSchema(req.body);
@@ -49,11 +49,11 @@ async function insertDB(
     });
 }
 
-async function deleteDB(
+async function deleteProject(
     req: NextApiRequest,
     res: NextApiResponse
 ): Promise<void> {
-    if (!verifyAuth) return;
+    if (!verifyAuth(req, res)) return;
 
     await dbConnect();
     projectSchema.findOneAndDelete(req.body, (err: Error, data: any) => {
@@ -76,6 +76,27 @@ async function deleteDB(
     });
 }
 
+
+async function getAllProject(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+    if (!verifyAuth(req, res, false)) {  // check if header have Authorization
+        res.redirect("/");
+        return;
+    }
+    await dbConnect();
+    projectSchema.find({}, (err: Error, data: any) => {
+        if (err) {
+            res.status(500).json({ status: "ERROR", message: err.message });
+        } else {
+            res.status(200).json({
+                status: "OK",
+                message: "successfuly fetched",
+                data: data,
+            });
+        }
+    })
+}
+
+
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
@@ -84,16 +105,20 @@ export default async function handler(
 
     switch (method) {
         case "POST":
-            await updateDB(req, res);
+            await updateProject(req, res);
             return;
         case "PUT":
-            await insertDB(req, res);
+            await createProject(req, res);
             return;
         case "DELETE":
-            await deleteDB(req, res);
+            await deleteProject(req, res);
+            return;
+        case "GET":
+            await getAllProject(req, res);
             return;
         default:
             res.redirect("/");
             return;
     }
 }
+
