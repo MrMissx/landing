@@ -2,7 +2,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+1. install all dependencies
+
+```bash
+npm install
+```
+
+2. Create a config file named `.env.local` with the following content:
+```env
+MONGODB_URI="mongodb://<user>:<password>@<host>/<collection>"
+AUTH_TOKEN="<This is up to you for the API authentication>"
+```
+
+3. run the development server:
 
 ```bash
 npm run dev
@@ -10,25 +22,113 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+***
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Private REST API
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This project provide is a REST API to insert, update and delete the `project` page content.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Request header
 
-## Learn More
+All requests MUST have the following header:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Authorization**: "Bearer \<AUTH_TOKEN\>"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Auth token is what you set in the `.env.local` file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Enpoints
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### GET all card
+```
+GET /api/project
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Response:
+```json
+{
+  "status": "OK",
+  "message": "successfuly fetched",
+  "data": [
+    {
+      "_id": "...",
+      "name": "...",
+      "description": "...",
+      "photo": "...",
+      "link": "...",
+    }
+  ]
+}
+```
+
+
+#### EDIT card
+```
+POST /api/project
+```
+
+Parameters:
+1. **name**: `string`
+2. **data**: `object of what you want to change`
+
+    object key must follow the data scheme such as GET response above
+    
+
+**example json body**
+
+```json
+{
+    "name": "Project 1",
+    "data": {
+        "description": "This is the new description"
+    }
+}
+```
+
+
+#### INSERT card
+```
+PUT /api/project
+```
+
+Insert a new project card.
+Parameters:
+1. **name**: `string`
+2. **description**: `string`
+3. **link**: `string` (A link to the project)
+4. **photo**: `string` (A link to the project image)
+
+**example json body**
+
+```json
+{
+    "name": "...",
+    "description": "...",
+    "link": "...",
+    "photo": "..."
+}
+```
+
+
+#### DELETE card
+```
+DELETE /api/project
+```
+Delete an existing project card.
+Parameters:
+1. **name**: `string`
+2. **description**: `string`
+3. **link**: `string` (A link to the project)
+4. **photo**: `string` (A link to the project image)
+
+
+**example json body**
+
+```json
+{
+    "name": "...",
+    "description": "...",
+    "link": "...",
+    "photo": "..."
+}
+```
