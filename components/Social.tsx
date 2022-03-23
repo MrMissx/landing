@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function Social() {
     const social = [
-        {link: "https://github.com/MrMissx", icon: ["fab", "github"], hoverColor: "hover:text-gray-800"},
+        {link: "https://github.com/MrMissx", icon: ["fab", "github"], hoverColor: "hover:text-gray-800 dark:hover:text-gray-200"},
         {link: "https://t.me/keselekpermen", icon: ["fab", "telegram"], hoverColor: "hover:text-blue-400"},
         {link: "https://instagram.com/gaungrb", icon: ["fab", "instagram"], hoverColor: "hover:text-red-400"},
         {link: "https://twitter.com/mrmissx", icon: ["fab", "twitter"] , hoverColor: "hover:text-blue-400"},
@@ -17,7 +17,7 @@ export default function Social() {
                 return (
                     <a key={idx.toString()}
                         href={item.link}
-                        className={"text-gray-400 mx-2" + item.hoverColor }
+                        className={"text-gray-400 dark:text-stone-600 mx-2" + item.hoverColor }
                         role="button"
                         target="_blank"
                         rel="noopener noreferrer"
