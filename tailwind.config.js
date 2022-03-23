@@ -3,6 +3,7 @@ module.exports = {
     './pages/**/*.tsx',
     './components/**/*.tsx',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       height : {

@@ -1,9 +1,6 @@
 import Image from 'next/image'
 
-import dbConnect from '../models'
 import { ProjectProps } from '../models/types'
-import projectSchema from '../models/projectSchema'
-
 
 
 export default function Project(props: ProjectProps) {
@@ -22,16 +19,4 @@ export default function Project(props: ProjectProps) {
 
         </div>
     )
-}
-
-
-export async function getServerSideProps() {
-    await dbConnect()
-    const res = await projectSchema.find({})
-    const projs = res.map(doc => {
-        const i =  doc.toObject()
-        i._id = i._id.toString()
-        return i
-    })
-    return { props: {projects: projs} }
 }
