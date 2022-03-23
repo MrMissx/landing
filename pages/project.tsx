@@ -16,7 +16,7 @@ export default function Project(props: ProjectProps) {
                     return (
                         <a href={ project.link } key={ project._id } target="_blank" rel="noopener noreferrer">
                             <Animation.FadeIn custom={idx} delay={0.2}>
-                                <div className="rounded overflow-hidden shadow-lg border border-gray-400 dark:border-gray-600 hover:border-blue-400 transform duration-500 hover:scale-105">
+                                <div className="rounded overflow-hidden shadow-lg border border-gray-400 dark:border-gray-700 dark:bg-stone-800 hover:border-blue-400 transform duration-500 hover:scale-105">
                                     <div className="w-full overflow-hidden relative h-40v md:h-30v lg:h-40v">
                                         <Image
                                             src={project.photo}

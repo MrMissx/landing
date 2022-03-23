@@ -17,7 +17,7 @@ export default function Social() {
                 return (
                     <a key={idx.toString()}
                         href={item.link}
-                        className={"text-gray-400 dark:text-stone-700 mx-2" + item.hoverColor }
+                        className={"text-gray-400 dark:text-stone-600 mx-2" + item.hoverColor }
                         role="button"
                         target="_blank"
                         rel="noopener noreferrer"

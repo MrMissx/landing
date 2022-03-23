@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
                 pageAnimate: {
                     opacity: 1,
                 },
-            }} className="dark:bg-neutral-900">
+            }}>
                 <Component {...pageProps} />
                 {showButton && (
                     <button

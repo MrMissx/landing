@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 
-body {
-    font-family: 'Poppins', sans-serif;
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+        @apply dark:bg-neutral-900
+    }
 }
