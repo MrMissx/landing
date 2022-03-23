@@ -31,13 +31,13 @@ export default function Tools() {
     ]
 
     return (
-        <div className="mx-14 md:mx-28 lg:mx-52">
+        <div className="mx-14">
             <h1 className="text-2xl text-center">Tools I have used</h1>
-            <div className="flex flex-wrap items-center justify-center">
+            <div className="grid grid-cols-4 md:grid-cols-7 lg:grid-cols-10 gap-4 place-content-evenly">
                 {tools.map((tool, index) => {
                 return (
-                    <Animation.FadeIn key={ index } delay={ .1 } custom={ index } className="mx-2 my-2" >
-                        <a target="_blank" rel="noopener noreferrer" href={ tool[1].toString() }>{tool[2]}</a>
+                    <Animation.FadeIn key={ index } delay={ .1 } custom={ index } >
+                        <a target="_blank" rel="noopener noreferrer" href={ tool[1].toString() } >{tool[2]}</a>
                     </Animation.FadeIn>
                     )
                 })}
