@@ -15,11 +15,10 @@ export default function ThemeToggle({className = ""}) {
         if(currTheme === "dark"){
             return (
                 <svg // bulb icon
-                className="h-7 w-7 text-black dark:text-white hover:scale-110"
+                className="h-7 w-7 hover:scale-110 cursor-pointer"
                 onClick={() => { setTheme("light") }}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                role="button"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 >
@@ -34,11 +33,10 @@ export default function ThemeToggle({className = ""}) {
         } else {
             return (
                 <svg  // moon icon
-                className="h-7 w-7 text-black dark:text-white hover:scale-110"
+                className="h-7 w-7 hover:scale-110 cursor-pointer"
                 onClick={() => { setTheme("dark") }}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                role="button"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 >
