@@ -13,7 +13,7 @@ export default function About(props: AboutProps) {
     return (
         <Layout pageTitle="About Me">
             <div className="mx-14 md:mx-28 lg:mx-52">
-                <div className="font-light text-sm lg:text-base">
+                <div className="font-light text-sm lg:text-base mt-5">
                     {data.content.map((text, idx) => {
                         return (
                             <Animation.SlideLeft key={ idx } delay={0.2} custom={idx}>{ text } <br/><br/></Animation.SlideLeft>

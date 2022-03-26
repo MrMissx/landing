@@ -31,9 +31,9 @@ export default function Tools() {
     ]
 
     return (
-        <div className="mx-14">
+        <div className="mx-auto">
             <h1 className="text-2xl text-center">Tools I have used</h1>
-            <div className="grid grid-cols-4 md:grid-cols-7 lg:grid-cols-10 gap-4 place-content-evenly">
+            <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4 place-items-center">
                 {tools.map((tool, index) => {
                 return (
                     <Animation.FadeIn key={ index } delay={ .1 } custom={ index } >
