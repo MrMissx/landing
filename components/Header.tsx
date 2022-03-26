@@ -1,41 +1,66 @@
 
-import Link from 'next/link'
+import Link from "next/link"
+import { useState } from "react";
 
-import { HeaderProps } from '../models/types'
-import ThemeToggle from './ThemeToggle'
-
+import { HeaderProps } from "../models/types"
+import ThemeToggle from "./ThemeToggle"
 
 export default function Header(props: HeaderProps) {
+    const [active, setActive] = useState(false);
     let { name } = props;
+
     if (name === undefined) {
         name = "Mr.Miss"
     }
 
     return (
-        <nav className="flex justify-between py-3">
-            <div className="text-center block py-2 px-4 text-2xl">
-                <p><b>{name}</b></p>
-            </div>
-            <ul className="flex">
-                <li className="mr-3">
-                    <ThemeToggle className="my-2.5" />
-                </li>
-                <li className="mr-3">
+        <nav className="flex items-center flex-wrap p-3 ">
+            <span className="text-xl font-bold tracking-wide">
+                {name}
+            </span>
+            <ThemeToggle className="px-3 ml-auto md:hidden" />
+            <button
+                className="inline-flex p-2 hover:bg-neutral-300 dark:hover:bg-neutral-700 rounded md:hidden outline-none"
+                onClick={() => setActive(!active)}
+            >
+                <svg  // hamburger menu icon
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                    />
+                </svg>
+            </button>
+            <div
+                className={`${active ? "" : "hidden"
+                    }   w-full md:inline-flex md:flex-grow md:w-auto`}
+            >
+                <div className="md:inline-flex md:flex-row md:ml-auto md:w-auto w-full md:items-center items-start flex flex-col md:h-auto">
+                    <ThemeToggle className="my-2.5 md:flex hidden" />
                     <Link href="/">
-                        <a className="text-center block border border-grey rounded hover:border-gray-200 text-gray-500 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4 shadow-md transform duration-500 hover:scale-110">Home</a>
+                        <a className="md:inline-flex md:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                            Home
+                        </a>
                     </Link>
-                </li>
-                <li className="mr-3">
                     <Link href="/about">
-                        <a className="text-center block border border-grey rounded hover:border-gray-200 text-gray-500 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4 shadow-md transform duration-500 hover:scale-110">About</a>
+                        <a className="md:inline-flex md:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                            About
+                        </a>
                     </Link>
-                </li>
-                <li className="mr-3">
                     <Link href="/project">
-                        <a className="text-center block border border-grey rounded hover:border-gray-200 text-gray-500 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4 shadow-md transform duration-500 hover:scale-110">Projects</a>
+                        <a className="md:inline-flex md:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                            Project
+                        </a>
                     </Link>
-                </li>
-            </ul>
+                </div>
+            </div>
         </nav>
     )
 }
