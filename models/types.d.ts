@@ -40,6 +40,11 @@ export interface LayoutProps {
     pageTitle: string
 }
 
+export interface ProjectCardProps {
+    data: Project,
+    key: number
+}
+
 export interface ProjectProps {
     projects: Array<Project>
 }
