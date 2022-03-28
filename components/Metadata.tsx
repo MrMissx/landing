@@ -11,6 +11,8 @@ export default function Metadata() {
             <meta name="image" content={ baseUrl + imagePath }/>
             <link rel="icon" href={ baseUrl + "/favicon.ico"} />
             <meta name="description" content={ desc } />
+            <meta name="keywords"
+                content="MrMiss, Mr_Miss, keselekpermen, Gaung Ramadhan Bagaswara, Gaung Ramadhan, Gaung" />
 
             <meta property="og:type" content="article" />
             <meta property="og:title" content="Mr.Miss" />
