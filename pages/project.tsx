@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";
+import ScrollUpButton from "../components/ScrollUpButton";
 
 import dbConnect from "../models";
 import { ProjectProps } from "../models/types";
@@ -17,6 +18,7 @@ export default function Project(props: ProjectProps) {
                     )
                 })}
             </div>
+            <ScrollUpButton />
         </Layout>
     );
 }

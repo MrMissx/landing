@@ -43,6 +43,8 @@ export default function Home(props: MainProps) {
                             alt="Profile Picture"
                             width={300}
                             height={300}
+                            sizes="40vw"
+                            layout="responsive"
                             className="rounded-full border border-gray-100 shadow-sm"
                         />
                     </div>
@@ -97,7 +99,7 @@ export default function Home(props: MainProps) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     await dbConnect()
     const res = await mainSchema.findOne({_id: 1})
     return { props: { data: res.toObject() } }

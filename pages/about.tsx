@@ -1,6 +1,7 @@
 import Animation from '../components/animation'
 import Tools from '../components/Tools'
 import Layout from '../components/Layout'
+import ScrollUpButton from "../components/ScrollUpButton";
 
 import dbConnect from "../models"
 import { AboutProps } from "../models/types"
@@ -22,12 +23,13 @@ export default function About(props: AboutProps) {
                 </div>
                 <Tools />
             </div>
+            <ScrollUpButton />
         </Layout>
     )
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     await dbConnect()
     const data = await AboutSchema.findOne({ _id: 1 })
     return { props: { data: data.toObject() } }
