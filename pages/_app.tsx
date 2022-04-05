@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { motion } from 'framer-motion'
 import { ThemeProvider } from 'next-themes'
+import NextNProgress from "nextjs-progressbar";
 
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { faAngleUp, faMoon } from '@fortawesome/free-solid-svg-icons'
@@ -19,9 +20,9 @@ library.add(faGithub, faTwitter, faLinkedin, faInstagram, faTelegram, faAngleUp,
 
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-
     return (
         <ThemeProvider attribute="class">
+            <NextNProgress height={4} options={{ showSpinner: false }}/>
             <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
                 pageInitial: {
                     opacity: 0,

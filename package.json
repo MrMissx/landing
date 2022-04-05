@@ -21,6 +21,7 @@
     "next": "^12.1.4",
     "next-sitemap": "^2.5.17",
     "next-themes": "^0.1.1",
+    "nextjs-progressbar": "^0.0.14",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-intersection-observer": "^8.33.1",
