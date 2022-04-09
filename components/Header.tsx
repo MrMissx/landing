@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { useState } from "react";
 
 import { HeaderProps } from "../models/types"
@@ -7,6 +8,7 @@ import ThemeToggle from "./ThemeToggle"
 
 export default function Header(props: HeaderProps) {
     const [active, setActive] = useState(false);
+    const router = useRouter();
     let { name } = props;
 
     if (name === undefined) {
@@ -45,19 +47,25 @@ export default function Header(props: HeaderProps) {
                 <div className="md:inline-flex md:flex-row md:ml-auto md:w-auto w-full md:items-center items-start flex flex-col md:h-auto">
                     <ThemeToggle className="my-2.5 md:flex hidden" />
                     <Link href="/">
-                        <a className="md:inline-flex md:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                        <button className="md:inline-flex md:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:bg-neutral-200 disabled:dark:bg-neutral-800">
                             Home
-                        </a>
+                        </button>
                     </Link>
                     <Link href="/about">
-                        <a className="md:inline-flex md:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                        <button
+                            className="md:inline-flex md:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:bg-neutral-200 disabled:dark:bg-neutral-800"
+                            disabled={router.asPath === "/about"}
+                        >
                             About
-                        </a>
+                        </button>
                     </Link>
                     <Link href="/project">
-                        <a className="md:inline-flex md:w-auto w-full px-3 py-2 rounded  font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                        <button
+                            className="md:inline-flex md:w-auto w-full px-3 py-2 rounded font-bold items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:bg-neutral-200 disabled:dark:bg-neutral-800"
+                            disabled={router.asPath === "/project"}
+                        >
                             Project
-                        </a>
+                        </button>
                     </Link>
                 </div>
             </div>
