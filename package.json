@@ -17,7 +17,7 @@
     "@popperjs/core": "^2.11.5",
     "cssnano": "^5.1.7",
     "framer-motion": "^6.3.3",
-    "mongoose": "^6.2.10",
+    "mongoose": "^6.3.2",
     "next": "^12.1.4",
     "next-sitemap": "^2.5.20",
     "next-themes": "^0.1.1",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/react": "17.0.43",
     "autoprefixer": "^10.4.4",
-    "eslint": "8.12.0",
+    "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
