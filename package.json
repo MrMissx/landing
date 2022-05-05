@@ -29,7 +29,7 @@
     "sharp": "^0.30.4"
   },
   "devDependencies": {
-    "@types/react": "17.0.43",
+    "@types/react": "18.0.8",
     "autoprefixer": "^10.4.4",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
