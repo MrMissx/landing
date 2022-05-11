@@ -17,7 +17,7 @@
     "@popperjs/core": "^2.11.5",
     "cssnano": "^5.1.7",
     "framer-motion": "^6.3.3",
-    "mongoose": "^6.2.10",
+    "mongoose": "^6.3.3",
     "next": "^12.1.4",
     "next-sitemap": "^2.5.20",
     "next-themes": "^0.1.1",
