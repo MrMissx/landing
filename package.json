@@ -18,7 +18,7 @@
     "cssnano": "^5.1.7",
     "framer-motion": "^6.3.3",
     "mongoose": "^6.3.3",
-    "next": "^12.1.4",
+    "next": "^12.1.6",
     "next-sitemap": "^2.5.20",
     "next-themes": "^0.1.1",
     "nextjs-progressbar": "^0.0.14",
