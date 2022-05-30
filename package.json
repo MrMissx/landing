@@ -15,7 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.5",
-    "cssnano": "^5.1.8",
+    "cssnano": "^5.1.9",
     "framer-motion": "^6.3.3",
     "mongoose": "^6.3.4",
     "next": "^12.1.6",
@@ -24,7 +24,7 @@
     "nextjs-progressbar": "^0.0.14",
     "react": "^18.0.0",
     "react-dom": "^18.1.0",
-    "react-intersection-observer": "^8.33.1",
+    "react-intersection-observer": "^9.2.0",
     "react-popper": "^2.3.0",
     "sharp": "^0.30.4"
   },
