@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.5",
     "cssnano": "^5.1.9",
-    "framer-motion": "^6.3.3",
+    "framer-motion": "^6.3.6",
     "mongoose": "^6.3.4",
     "next": "^12.1.6",
     "next-sitemap": "^2.5.20",
