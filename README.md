@@ -10,8 +10,13 @@ npm install
 
 2. Create a config file named `.env.local` with the following content:
 ```env
-MONGODB_URI="mongodb://<user>:<password>@<host>/<collection>"
-AUTH_TOKEN="<This is up to you for the API authentication>"
+NEXT_PUBLIC_FIREBASE_API_KEY="<API key from Firebase>"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="<Aauth Domain from Firebase>"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID="<Project ID from Firebase>"
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="<Storage Bucket from Firebase>"
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="<Sender ID from Firebase>"
+NEXT_PUBLIC_FIREBASE_APP_ID="<App ID from Firebase>"
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID="<Measurement ID from Firebase>"
 ```
 
 3. run the development server:
@@ -24,111 +29,8 @@ yarn dev
 
 ***
 
-## Private REST API
+## Admin Dashboard
 
-This project provide is a REST API to insert, update and delete the `project` page content.
-
-### Request header
-
-All requests MUST have the following header:
-
-1. **Authorization**: "Bearer \<AUTH_TOKEN\>"
-
-    Auth token is what you set in the `.env.local` file.
-
-
-### Enpoints
-
-#### GET all card
-```
-GET /api/project
-```
-
-Response:
-```json
-{
-  "status": "OK",
-  "message": "successfuly fetched",
-  "data": [
-    {
-      "_id": "...",
-      "name": "...",
-      "description": "...",
-      "photo": "...",
-      "link": "...",
-    }
-  ]
-}
-```
-
-
-#### EDIT card
-```
-POST /api/project
-```
-
-Parameters:
-1. **name**: `string`
-2. **data**: `object of what you want to change`
-
-    object key must follow the data scheme such as GET response above
-    
-
-**example json body**
-
-```json
-{
-    "name": "Project 1",
-    "data": {
-        "description": "This is the new description"
-    }
-}
-```
-
-
-#### INSERT card
-```
-PUT /api/project
-```
-
-Insert a new project card.
-Parameters:
-1. **name**: `string`
-2. **description**: `string`
-3. **link**: `string` (A link to the project)
-4. **photo**: `string` (A link to the project image)
-
-**example json body**
-
-```json
-{
-    "name": "...",
-    "description": "...",
-    "link": "...",
-    "photo": "..."
-}
-```
-
-
-#### DELETE card
-```
-DELETE /api/project
-```
-Delete an existing project card.
-Parameters:
-1. **name**: `string`
-2. **description**: `string`
-3. **link**: `string` (A link to the project)
-4. **photo**: `string` (A link to the project image)
-
-
-**example json body**
-
-```json
-{
-    "name": "...",
-    "description": "...",
-    "link": "...",
-    "photo": "..."
-}
-```
+To access the admin dashboard, go to `<yoursite>/admin`.
+This will promt you to input an email and password.
+Create the user on firebase console if you have not created it yet.

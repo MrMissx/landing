@@ -2,11 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
+import { doc, getDoc } from 'firebase/firestore';
 
-import dbConnect from '../models'
 import { renderText } from '../utils'
 import { MainProps } from '../models/types'
-import mainSchema from '../models/mainSchema'
+import { db } from '../firebase/client';
 
 import ThemeToggle from '../components/ThemeToggle'
 import Animation from '../components/animation'
@@ -15,13 +15,14 @@ import Social from '../components/Social'
 
 export default function Home(props: MainProps) {
     const { data } = props;
+
     return (
         <>
             <Metadata />
             <Head>
                 <title>Mr.Miss</title>
             </Head>
-            <main className="">
+            <main>
                 <ThemeToggle className="absolute top-3 right-3"/>
                 <motion.div className="flex flex-col md:flex-row items-center justify-center h-screen md:mx-20 mx-10"
                 initial="hidden" animate="visible" variants={{
@@ -62,7 +63,7 @@ export default function Home(props: MainProps) {
                                 <p className="text-gray-500 hover:text-black md:text-xl text-sm rounded-full bg-pink-200 w-max px-3 py-px">Mr.Miss</p>
                             </Animation.SlideLeft>
                             <Animation.SlideLeft delay={1}>
-                                <p className="mt-1 text-sm md:text-base" dangerouslySetInnerHTML={{ __html: renderText(data.about) }} />
+                                {data && <p className="mt-1 text-sm md:text-base" dangerouslySetInnerHTML={{ __html: renderText(data.bio) }} /> }
                             </Animation.SlideLeft>
                         </div>
 
@@ -99,8 +100,11 @@ export default function Home(props: MainProps) {
 }
 
 
-export async function getStaticProps() {
-    await dbConnect()
-    const res = await mainSchema.findOne({_id: 1})
-    return { props: { data: res.toObject() } }
+export async function getServerSideProps() {
+    const docRef = doc(db, 'main', '1');
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+        return { props: { data: docSnap.data() } };
+    }
+    return { props: { data: {} } };
 }   

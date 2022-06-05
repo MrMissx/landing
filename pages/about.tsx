@@ -2,10 +2,10 @@ import Animation from '../components/animation'
 import Tools from '../components/Tools'
 import Layout from '../components/Layout'
 import ScrollUpButton from "../components/ScrollUpButton";
+import { doc, getDoc } from 'firebase/firestore';
 
-import dbConnect from "../models"
+import { db } from '../firebase/client';
 import { AboutProps } from "../models/types"
-import AboutSchema from "../models/aboutSchema"
 
 
 export default function About(props: AboutProps) {
@@ -29,8 +29,11 @@ export default function About(props: AboutProps) {
 }
 
 
-export async function getStaticProps() {
-    await dbConnect()
-    const data = await AboutSchema.findOne({ _id: 1 })
-    return { props: { data: data.toObject() } }
+export async function getServerSideProps() {
+    const docRef = doc(db, 'about', '1');
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+        return { props: { data: docSnap.data() } };
+    }
+    return { props: { data: {} } };
 }
