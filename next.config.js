@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['mrmiss.my.id', 'telegra.ph', 'i.ibb.co']
+    domains: ['mrmiss.my.id', 'telegra.ph', 'i.ibb.co', 'firebasestorage.googleapis.com']
   }
 }

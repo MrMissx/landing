@@ -15,26 +15,26 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.11.5",
-    "cssnano": "^5.1.9",
-    "framer-motion": "^6.3.6",
-    "mongoose": "^6.3.4",
+    "cssnano": "^5.1.11",
+    "firebase": "^9.8.3",
+    "framer-motion": "^6.3.11",
     "next": "^12.1.6",
-    "next-sitemap": "^2.5.20",
+    "next-sitemap": "^2.5.28",
     "next-themes": "^0.2.0",
     "nextjs-progressbar": "^0.0.14",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-intersection-observer": "^8.33.1",
+    "react-intersection-observer": "^8.34.0",
     "react-popper": "^2.3.0",
-    "sharp": "^0.30.4"
+    "sharp": "^0.30.6"
   },
   "devDependencies": {
     "@types/react": "17.0.43",
     "autoprefixer": "^10.4.7",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
-    "postcss": "^8.4.13",
-    "tailwindcss": "^3.0.24",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.2",
     "typescript": "4.6.4"
   }
 }

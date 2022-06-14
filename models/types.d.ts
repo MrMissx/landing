@@ -1,50 +1,51 @@
 import { ReactNode } from 'react';
 
+export interface PageProps {
+    children: ReactNode;
+}
 
 export interface Project {
-    _id: number
     name: string,
     description: string,
     photo: string,
     link?: string,
-    __v: number
+    _id?: string,
 }
 
 export interface MainPage {
     image: string,
-    about: string,
-    __v: number
+    bio: string
 }
 
 export interface About {
-    _id: number,
     content: Array<string>,
-    __v: number
 }
 
 export interface AboutProps {
     data: About
 }
 
-export interface MainProps {
+export interface MainProps extends PageProps {
     data: MainPage,
-    children?: ReactNode
 }
 
 export interface HeaderProps {
     name?: string
 }
 
-export interface LayoutProps {
-    children: ReactNode,
+export interface LayoutProps extends PageProps {
     pageTitle: string
 }
 
 export interface ProjectCardProps {
     data: Project,
-    key: number
+    id: number
 }
 
 export interface ProjectProps {
     projects: Array<Project>
+}
+
+export interface AdminContextProps {
+    user?: string | null
 }

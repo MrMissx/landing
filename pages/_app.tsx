@@ -15,25 +15,29 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
+import AdminContext from "../context/adminContext";
+
 config.autoAddCss = false
 library.add(faGithub, faTwitter, faLinkedin, faInstagram, faTelegram, faAngleUp, faMoon)
 
 
 function MyApp({ Component, pageProps, router }: AppProps) {
     return (
-        <ThemeProvider attribute="class">
-            <NextNProgress height={4} options={{ showSpinner: false }}/>
-            <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
-                pageInitial: {
-                    opacity: 0,
-                },
-                pageAnimate: {
-                    opacity: 1,
-                },
-            }}>
-                <Component {...pageProps} />
-            </motion.div>
-        </ThemeProvider>
+        <AdminContext>
+            <ThemeProvider attribute="class">
+                <NextNProgress height={4} options={{ showSpinner: false }}/>
+                <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+                    pageInitial: {
+                        opacity: 0,
+                    },
+                    pageAnimate: {
+                        opacity: 1,
+                    },
+                }}>
+                        <Component {...pageProps} />
+                </motion.div>
+            </ThemeProvider>
+        </AdminContext>
     )
 }
 export default MyApp

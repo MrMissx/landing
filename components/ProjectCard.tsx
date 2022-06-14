@@ -5,10 +5,10 @@ import Animation from './animation'
 import { ProjectCardProps } from '../models/types'
 
 
-export default function ProjectCard({ data, key }: ProjectCardProps) {
+export default function ProjectCard({ data, id }: ProjectCardProps) {
     return (
-        <a href={data.link} key={data._id} target="_blank" rel="noopener noreferrer">
-            <Animation.FadeIn custom={key} delay={0.2}>
+        <a href={data.link} key={id} target="_blank" rel="noopener noreferrer">
+            <Animation.FadeIn custom={id} delay={0.2}>
                 <div className="rounded overflow-hidden shadow-lg border border-gray-400 dark:border-gray-700 dark:bg-stone-800 hover:border-blue-400 transform duration-500 hover:scale-105">
                     <div className="w-full overflow-hidden relative h-40v md:h-30v lg:h-40v">
                         <Image
