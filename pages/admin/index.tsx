@@ -13,16 +13,16 @@ import Project from "../../components/admin/Project";
 export default function Dashboard() {
     const router = useRouter();
     const { user } = useContext(AdminContext);
-    const [active, setActive] = useState("main");
+    const [ active, setActive ] = useState("main");
     const [ hidden, setHidden ] = useState(false);
+    const [ logOut, setLogOut ] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
-            if(!user){
-                router.push("/admin/login")
-            }
-        }, 2000);
-    }, [router, user]);
+        if(logOut) return;
+        if(!user){
+            router.push("/admin/login")
+        }
+    }, [router, user, logOut]);
 
     const getPage = (): JSX.Element => {
         switch (active) {
@@ -77,8 +77,9 @@ export default function Dashboard() {
                             className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0"
                             onClick={(e) => {
                                 e.preventDefault();
+                                setLogOut(true);
                                 signOut(auth);
-                                router.push("/admin/login")
+                                router.push("/")
                             }}
                         >Sign Out</button>
                     </div>
