@@ -17,7 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@popperjs/core": "^2.11.5",
     "cssnano": "^5.1.12",
-    "firebase": "^9.8.4",
+    "firebase": "^9.9.0",
     "framer-motion": "^6.4.3",
     "next": "^12.2.1",
     "next-sitemap": "^3.1.10",
