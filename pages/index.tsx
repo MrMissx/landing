@@ -10,7 +10,6 @@ import { db } from '../firebase/client';
 
 import ThemeToggle from '../components/ThemeToggle'
 import Animation from '../components/animation'
-import Metadata from '../components/Metadata'
 import Social from '../components/Social'
 
 export default function Home(props: MainProps) {
@@ -18,7 +17,6 @@ export default function Home(props: MainProps) {
 
     return (
         <>
-            <Metadata />
             <Head>
                 <title>Mr.Miss</title>
             </Head>

@@ -1,16 +1,14 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import Header from './Header'
-import Footer from './Footer'
-import Metadata from './Metadata'
-import { LayoutProps } from '../models/types'
+import Header from "./Header"
+import Footer from "./Footer"
+import { LayoutProps } from "../models/types"
 
 
 export default function Layout(props: LayoutProps) {
     const { children, pageTitle } = props
     return (
         <>
-            <Metadata/>
             <Head>
                 <title>{ pageTitle }</title>
             </Head>
