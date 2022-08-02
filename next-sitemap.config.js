@@ -9,5 +9,5 @@ module.exports = {
     generateRobotsTxt: true,
     generateIndexSitemap: false,
     sitemapSize: 7000,
-    exclude: [ "/admin/**" ]
+    exclude: [ "/admin*" ]
 };
