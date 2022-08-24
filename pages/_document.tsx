@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-
+import Script from "next/script";
 
 export default function Document() {
     const desc: string = "Hii... I'm MrMiss. Welcome to my personal site :)."
@@ -27,6 +27,18 @@ export default function Document() {
                 <meta property="twitter:image" content={baseUrl + imagePath} />
                 <meta property="twitter:creator" content="@mrmissx" />
                 <meta property="twitter:description" content={desc} />
+
+                {/* <!-- Google tag (gtag.js) --> */}
+                <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-TREXD7HF0H" />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-TREXD7HF0H');
+                `}
+                </Script>
             </Head>
             <body>
                 <Main />
