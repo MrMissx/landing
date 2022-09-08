@@ -15,7 +15,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@popperjs/core": "^2.11.5",
+    "@popperjs/core": "^2.11.6",
     "cssnano": "^5.1.12",
     "firebase": "^9.9.1",
     "framer-motion": "^6.5.1",
