@@ -18,7 +18,7 @@
     "@popperjs/core": "^2.11.6",
     "cssnano": "^5.1.12",
     "firebase": "^9.9.4",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^7.3.5",
     "next": "^12.3.0",
     "next-sitemap": "^3.1.21",
     "next-themes": "^0.2.0",
