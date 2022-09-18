@@ -1,4 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
+import { GetStaticProps } from "next";
 
 import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";
@@ -15,7 +16,7 @@ export default function Project(props: ProjectProps) {
             <div className="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {projects.map((project, idx) => {
                     return (
-                        <ProjectCard data={project} key={idx}  id={idx} />
+                        <ProjectCard data={project} key={idx} id={idx} />
                     )
                 })}
             </div>
@@ -25,10 +26,10 @@ export default function Project(props: ProjectProps) {
 }
 
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const querySnapshot = await getDocs(collection(db, "projects"));
     const projects = querySnapshot.docs.map((doc) => {
         return doc.data() as ProjectProps;
     })
-    return { props: { projects }}
+    return { props: { projects }, revalidate: 86400 };
 }

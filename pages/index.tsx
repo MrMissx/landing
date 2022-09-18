@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -21,21 +22,21 @@ export default function Home(props: MainProps) {
                 <title>Mr.Miss</title>
             </Head>
             <main>
-                <ThemeToggle className="absolute top-3 right-3"/>
+                <ThemeToggle className="absolute top-3 right-3" />
                 <motion.div className="flex flex-col md:flex-row items-center justify-center h-screen md:mx-20 mx-10"
-                initial="hidden" animate="visible" variants={{
-                    hidden: {
-                        opacity: 0,
-                        scale: 0.8
-                    },
-                    visible: {
-                        opacity: 1,
-                        scale: 1,
-                        transition: {
-                            delay: 0.5
+                    initial="hidden" animate="visible" variants={{
+                        hidden: {
+                            opacity: 0,
+                            scale: 0.8
+                        },
+                        visible: {
+                            opacity: 1,
+                            scale: 1,
+                            transition: {
+                                delay: 0.5
+                            }
                         }
-                    }
-                }}>
+                    }}>
                     <div className="w-7/12 md:w-5/12 lg:w-3/12">
                         <Image
                             src="/profile.jpg"
@@ -61,7 +62,7 @@ export default function Home(props: MainProps) {
                                 <p className="text-gray-500 hover:text-black md:text-xl text-sm rounded-full bg-pink-200 w-max px-3 py-px">Mr.Miss</p>
                             </Animation.SlideLeft>
                             <Animation.SlideLeft delay={1}>
-                                {data && <p className="mt-1 text-sm md:text-base" dangerouslySetInnerHTML={{ __html: renderText(data.bio) }} /> }
+                                {data && <p className="mt-1 text-sm md:text-base" dangerouslySetInnerHTML={{ __html: renderText(data.bio) }} />}
                             </Animation.SlideLeft>
                         </div>
 
@@ -98,11 +99,11 @@ export default function Home(props: MainProps) {
 }
 
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const docRef = doc(db, 'main', '1');
     const docSnap = await getDoc(docRef);
-    if(docSnap.exists()){
+    if (docSnap.exists()) {
         return { props: { data: docSnap.data() } };
     }
-    return { props: { data: {} } };
+    return { props: { data: {} }, revalidate: 86400 };
 }   
