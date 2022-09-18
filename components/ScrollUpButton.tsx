@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
+import { FaAngleUp } from "react-icons/fa"
 
 export default function ScrollUpButton() {
-    const [ showButton, setJumpButton] = useState(false)
+    const [showButton, setJumpButton] = useState(false)
     const jumpToTop = () => {
         window.scrollTo({
             top: 0,
@@ -13,7 +12,7 @@ export default function ScrollUpButton() {
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300){
+            if (window.scrollY > 300) {
                 setJumpButton(true)
             } else {
                 setJumpButton(false)
@@ -25,10 +24,10 @@ export default function ScrollUpButton() {
         <>
             {showButton && (
                 <button
-                onClick={jumpToTop}
-                className="fixed bottom-0 right-0 rounded-full h-8 w-8 flex items-center justify-center bg-blue-300 dark:bg-neutral-600 mb-5 mr-5"
+                    onClick={jumpToTop}
+                    className="fixed bottom-0 right-0 rounded-full h-8 w-8 flex items-center justify-center bg-blue-300 dark:bg-neutral-600 mb-5 mr-5"
                 >
-                    <FontAwesomeIcon icon={['fas', 'angle-up']} />
+                    <FaAngleUp />
                 </button>
             )}
         </>
