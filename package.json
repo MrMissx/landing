@@ -13,7 +13,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "cssnano": "^5.1.13",
-    "firebase": "^9.10.0",
+    "firebase": "^9.12.1",
     "framer-motion": "^7.6.1",
     "next": "^12.3.1",
     "next-sitemap": "^3.1.29",
