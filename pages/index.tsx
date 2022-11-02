@@ -15,6 +15,7 @@ import Social from '../components/Social'
 
 export default function Home(props: MainProps) {
     const { data } = props;
+    const cvUrl = process.env.NEXT_PUBLIC_CV_URL || undefined;
 
     return (
         <>
@@ -73,22 +74,27 @@ export default function Home(props: MainProps) {
                             <ul className="flex justify-evenly">
                                 <Animation.FadeIn delay={1.2}>
                                     <li className="mr-3">
-                                        <Link href="/about">
-                                            <a className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
-                                                About Me
-                                            </a>
+                                        <Link href="/about" className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
+                                            About Me
                                         </Link>
                                     </li>
                                 </Animation.FadeIn>
                                 <Animation.FadeIn delay={1.4}>
                                     <li className="mr-3">
-                                        <Link href="/project">
-                                            <a className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
-                                                Projects
-                                            </a>
+                                        <Link href="/project" className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
+                                            Projects
                                         </Link>
                                     </li>
                                 </Animation.FadeIn>
+                                { cvUrl &&
+                                    <Animation.FadeIn delay={1.6}>
+                                        <li className="mr-3">
+                                            <Link href={cvUrl} target="_blank" className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
+                                                CV
+                                            </Link>
+                                        </li>
+                                    </Animation.FadeIn>
+                                }
                             </ul>
                         </div>
                     </div>

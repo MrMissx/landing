@@ -15,14 +15,16 @@ export default function About(props: AboutProps) {
     return (
         <Layout pageTitle="About Me">
             <div className="mx-14 md:mx-28 lg:mx-52">
-                <div className="font-light text-sm lg:text-base mt-5">
+                <div className="font-normal text-sm lg:text-base mt-5 mx-10 md:mx-20 lg:mx-40">
                     {data.content.map((text, idx) => {
                         return (
                             <Animation.SlideLeft key={idx} delay={0.2} custom={idx}>{text} <br /><br /></Animation.SlideLeft>
                         )
                     })}
                 </div>
-                <Tools />
+                <div className="m-5">
+                    <Tools />
+                </div>
             </div>
             <ScrollUpButton />
         </Layout>
