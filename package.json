@@ -15,7 +15,7 @@
     "cssnano": "^5.1.13",
     "firebase": "^9.13.0",
     "framer-motion": "^7.6.5",
-    "next": "^13.0.1",
+    "next": "^13.0.2",
     "next-sitemap": "^3.1.30",
     "next-themes": "^0.2.1",
     "nextjs-progressbar": "^0.0.16",
