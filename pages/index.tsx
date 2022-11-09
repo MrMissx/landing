@@ -86,8 +86,15 @@ export default function Home(props: MainProps) {
                                         </Link>
                                     </li>
                                 </Animation.FadeIn>
+                                <Animation.FadeIn delay={1.6}>
+                                    <li className="mr-3">
+                                        <Link href="/support" className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
+                                            Support
+                                        </Link>
+                                    </li>
+                                </Animation.FadeIn>
                                 { cvUrl &&
-                                    <Animation.FadeIn delay={1.6}>
+                                    <Animation.FadeIn delay={1.8}>
                                         <li className="mr-3">
                                             <Link href={cvUrl} target="_blank" className="text-center block border border-grey dark:border-gray-800 rounded text-xs md:text-base hover:border-gray-200 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:bg-stone-800 dark:hover:bg-gray-700 py-2 px-4">
                                                 CV
