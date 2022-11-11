@@ -6,7 +6,7 @@ export default function Support() {
             <main className="mx-7 md:mx-28 lg:mx-52 mt-4">
                 <h1 className="text-4xl lg:text-5xl my-5">Support Me 💖</h1>
                 <p>
-                    Hi, thank you for comming here. Your supports means a lot to
+                    Hi, thank you for comming here. Your supports means a lot for
                     me to keep my existing project alive and updated.
                 </p>
                 <p> You can support me via:</p>
@@ -36,7 +36,7 @@ export default function Support() {
                         </span>
                     </li>
                     <li>
-                        Ethereum (and other EVM&apos;s compatible):{" "}
+                        Ethereum (includes layer-2 and other EVM&apos;s compatible):{" "}
                         <ul className="list-disc list-inside pl-5">
                             <li>
                                 ENS:{" "}
