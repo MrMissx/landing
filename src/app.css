@@ -8,10 +8,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* * {
-  border: 2px solid limegreen;
-} */
-
 @layer base {
   body {
     height: 200%;

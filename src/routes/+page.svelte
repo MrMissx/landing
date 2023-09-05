@@ -8,7 +8,7 @@
 
   import { currentSection } from "$lib/shared/stores"
 
-  let scrollButtonHidden = [true, false]
+  let navButtonDisabled = [true, false]
   const Page = [Home, About, Project]
   const max = Page.length
 
@@ -20,13 +20,13 @@
 
   $: switch ($currentSection) {
     case 0:
-      scrollButtonHidden = [true, false]
+      navButtonDisabled = [true, false]
       break
     case max - 1:
-      scrollButtonHidden = [false, true]
+      navButtonDisabled = [false, true]
       break
     default:
-      scrollButtonHidden = [false, false]
+      navButtonDisabled = [false, false]
       break
   }
 </script>
@@ -34,20 +34,20 @@
 <svelte:component this={Page[$currentSection]} />
 <nav>
   <button
+    disabled={navButtonDisabled[0]}
     id="prev"
     class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 hover:dark:text-zinc-200"
     aria-label="back to top"
     on:click={() => scrollTo("prev")}
-    class:hidden={scrollButtonHidden[0]}
   >
     <FaCaretLeft />
   </button>
   <button
+    disabled={navButtonDisabled[1]}
     id="next"
     class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 hover:dark:text-zinc-200"
     aria-label="back to top"
     on:click={() => scrollTo("next")}
-    class:hidden={scrollButtonHidden[1]}
   >
     <FaCaretRight />
   </button>
@@ -71,6 +71,10 @@
     button:hover {
       opacity: 1;
       scale: 1.1;
+    }
+
+    button:disabled {
+      opacity: 0;
     }
   }
 </style>
