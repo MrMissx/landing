@@ -32,49 +32,36 @@
 </script>
 
 <svelte:component this={Page[$currentSection]} />
-<nav>
-  <button
-    disabled={navButtonDisabled[0]}
-    id="prev"
-    class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 hover:dark:text-zinc-200"
-    aria-label="back to top"
-    on:click={() => scrollTo("prev")}
-  >
-    <FaCaretLeft />
-  </button>
-  <button
-    disabled={navButtonDisabled[1]}
-    id="next"
-    class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 hover:dark:text-zinc-200"
-    aria-label="back to top"
-    on:click={() => scrollTo("next")}
-  >
-    <FaCaretRight />
-  </button>
+<nav class="fixed w-full bottom-0 pt-7 bg-gradient-to-t from-zinc-100 dark:from-zinc-900 from-40%">
+  <div class="flex justify-center gap-10">
+    <button
+      disabled={navButtonDisabled[0]}
+      id="prev"
+      class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 hover:dark:text-zinc-200 w-8 h-w-8"
+      aria-label="back to top"
+      on:click={() => scrollTo("prev")}
+    >
+      <FaCaretLeft />
+    </button>
+    <button
+      disabled={navButtonDisabled[1]}
+      id="next"
+      class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 hover:dark:text-zinc-200 w-8 h-w-8"
+      aria-label="back to top"
+      on:click={() => scrollTo("next")}
+    >
+      <FaCaretRight />
+    </button>
+  </div>
 </nav>
 
 <style lang="scss">
-  nav {
-    position: fixed;
-    display: flex;
-    gap: 2rem;
-    left: 50%;
-    bottom: 2rem;
-    transform: translateX(-50%);
+  button:hover {
+    opacity: 1;
+    scale: 1.1;
+  }
 
-    button {
-      width: 3rem;
-      height: 3rem;
-      z-index: 100;
-    }
-
-    button:hover {
-      opacity: 1;
-      scale: 1.1;
-    }
-
-    button:disabled {
-      opacity: 0;
-    }
+  button:disabled {
+    opacity: 0;
   }
 </style>

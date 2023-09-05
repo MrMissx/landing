@@ -1,6 +1,6 @@
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/kit/vite';
-import sveltePreprocess from 'svelte-preprocess';
+import adapter from "@sveltejs/adapter-auto"
+import { vitePreprocess } from "@sveltejs/kit/vite"
+import sveltePreprocess from "svelte-preprocess"
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,7 +10,7 @@ const config = {
     sveltePreprocess({
       postcss: true,
       defaults: {
-        style: 'postcss'
+        style: "postcss"
       }
     })
   ),
@@ -21,6 +21,6 @@ const config = {
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter()
   }
-};
+}
 
-export default config;
+export default config

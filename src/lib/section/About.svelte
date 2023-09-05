@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { blur } from "svelte/transition"
+  import { slide, fly } from "svelte/transition"
 
   import { currentSection } from "$lib/shared/stores"
   import Stack from "$lib/components/Stack.svelte"
@@ -10,12 +10,13 @@
 </script>
 
 <section
-  transition:blur
+  in:slide
+  out:fly
   class="flex justify-center items-center h-screen mx-10 md:mx-20 text-center gap-11"
 >
   <div class="flex flex-col gap-6">
-    <h2 class="font-bold md:text-4xl text-2xl">About</h2>
-    <div>
+    <h2 in:slide={{ delay: 300 }} class="font-bold md:text-4xl text-2xl">About</h2>
+    <div in:slide={{ delay: 500 }}>
       <span>Hi There! Greetings 👋 Thanks for dropping by.</span>
       <p class="mx-2 md:mx-40 xl:mx-60">
         I'm a Software Developer from Indonesia, starting my coding journey in 2018. Feel free reach
@@ -26,6 +27,8 @@
         >.
       </p>
     </div>
-    <Stack />
+    <div in:slide={{ delay: 800 }}>
+      <Stack />
+    </div>
   </div>
 </section>
