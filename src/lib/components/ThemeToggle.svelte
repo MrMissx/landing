@@ -1,16 +1,15 @@
 <script lang="ts">
   import { onMount } from "svelte"
-
-  let dark: boolean
+  import { isDarkMode } from "$lib/shared/stores"
 
   onMount(() => {
-    dark = document.documentElement.classList.contains("dark")
+    isDarkMode.set(document.documentElement.classList.contains("dark"))
   })
 
   const toogleTheme = () => {
     document.documentElement.classList.toggle("dark")
-    dark = !dark
-    localStorage.theme = dark ? "dark" : "light"
+    $isDarkMode = !$isDarkMode
+    localStorage.theme = $isDarkMode ? "dark" : "light"
   }
 </script>
 
@@ -29,7 +28,7 @@
 </svelte:head>
 
 <button on:click={toogleTheme} class="absolute top-4 right-4">
-  {#if dark}
+  {#if $isDarkMode}
     <svg
       class="icon hover:scale-110 text-zinc-100"
       xmlns="http://www.w3.org/2000/svg"

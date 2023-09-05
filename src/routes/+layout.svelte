@@ -27,7 +27,7 @@
 </svelte:head>
 
 <ThemeToggle />
-<div class="text-primary-light dark:text-primary-dark">
+<div class="dark:text-primary-light text-primary-dark">
   <slot />
 </div>
 <ScrollFirst />
