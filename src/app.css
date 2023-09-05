@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    height: 200%;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    @apply bg-zinc-100;
+    @apply dark:bg-zinc-900;
+  }
+
+  p {
+    @apply text-zinc-900;
+    @apply dark:text-zinc-100;
+  }
+}
