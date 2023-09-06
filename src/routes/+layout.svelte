@@ -4,6 +4,7 @@
   import "../app.css"
   import ThemeToggle from "$lib/components/ThemeToggle.svelte"
   import ScrollFirst from "$lib/components/ScrollFirst.svelte"
+  import HelperButton from "$lib/components/HelperButton.svelte"
 
   const DESCRIPTION = "Welcome to my personal site."
   const TWITTER_HANDLE = "@mrmissx"
@@ -31,3 +32,4 @@
   <slot />
 </div>
 <ScrollFirst />
+<HelperButton />
