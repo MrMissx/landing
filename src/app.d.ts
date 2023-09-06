@@ -9,4 +9,9 @@ declare global {
   }
 }
 
+declare module "svelte-icons/**/index.js" {
+  import { SvelteComponentTyped } from "svelte"
+  export default class extends SvelteComponentTyped<unknown, unknown, unknown> {}
+}
+
 export {}

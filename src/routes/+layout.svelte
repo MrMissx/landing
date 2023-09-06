@@ -3,7 +3,7 @@
 
   import "../app.css"
   import ThemeToggle from "$lib/components/ThemeToggle.svelte"
-  import ScrollFirst from "$lib/shared/components/ScrollFirst.svelte"
+  import ScrollFirst from "$lib/components/ScrollFirst.svelte"
 
   const DESCRIPTION = "Welcome to my personal site."
   const TWITTER_HANDLE = "@mrmissx"

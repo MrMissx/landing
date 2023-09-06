@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fly, slide } from "svelte/transition"
-  import Card from "$lib/shared/components/Card.svelte"
+  import Card from "$lib/components/Card.svelte"
 </script>
 
 <section

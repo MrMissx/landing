@@ -15,7 +15,7 @@
   }
 </script>
 
-<div class="mx-10 my-2">
+<div class="mx-0 sm:mx-10 my-2">
   <h2 class="mb-3 text-xl font-bold">My Tech Stack</h2>
   <div class="flex justify-center flex-wrap mx-0 md:mx-10">
     {#each STACKS as it}
