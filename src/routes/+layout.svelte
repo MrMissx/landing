@@ -5,6 +5,7 @@
   import ThemeToggle from "$lib/components/ThemeToggle.svelte"
   import ScrollFirst from "$lib/components/ScrollFirst.svelte"
   import HelperButton from "$lib/components/HelperButton.svelte"
+  import NavigationButton from "$lib/components/NavigationButton.svelte"
 
   const DESCRIPTION = "Welcome to my personal site."
   const TWITTER_HANDLE = "@mrmissx"
@@ -27,9 +28,10 @@
   <meta name="twitter:description" content={DESCRIPTION} />
 </svelte:head>
 
-<ThemeToggle />
 <div class="dark:text-primary-light text-primary-dark">
+  <ThemeToggle />
   <slot />
+  <ScrollFirst />
+  <NavigationButton />
+  <HelperButton />
 </div>
-<ScrollFirst />
-<HelperButton />
