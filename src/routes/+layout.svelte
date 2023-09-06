@@ -3,7 +3,7 @@
 
   import "../app.css"
   import ThemeToggle from "$lib/components/ThemeToggle.svelte"
-  import ScrollFirst from "$lib/components/ScrollFirst.svelte"
+  import ScrollHome from "$lib/components/ScrollHome.svelte"
   import HelperButton from "$lib/components/HelperButton.svelte"
   import NavigationButton from "$lib/components/NavigationButton.svelte"
 
@@ -31,7 +31,7 @@
 <div class="dark:text-primary-light text-primary-dark">
   <ThemeToggle />
   <slot />
-  <ScrollFirst />
+  <ScrollHome />
   <NavigationButton />
   <HelperButton />
 </div>

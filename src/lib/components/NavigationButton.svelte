@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Home from "$lib/section/Home.svelte"
-  import About from "$lib/section/About.svelte"
-  import Project from "$lib/section/Project.svelte"
+  import { goto } from "$app/navigation"
+  import { onMount } from "svelte"
 
   import FaCaretLeft from "svelte-icons/fa/FaCaretLeft.svelte"
   import FaCaretRight from "svelte-icons/fa/FaCaretRight.svelte"
@@ -9,16 +8,26 @@
   import { currentSection } from "$lib/shared/stores"
 
   let navButtonDisabled = [true, false]
-  const Page = [Home, About, Project]
-  const max = Page.length
+  const page = ["/", "/about", "/project"]
+  const max = page.length
 
   function scrollTo(action: "prev" | "next") {
     const toSection = action === "prev" ? $currentSection - 1 : $currentSection + 1
     if (toSection < 0 || toSection > max - 1) return
     currentSection.update(() => toSection)
+    goto(page[toSection])
   }
 
+  onMount(() => {
+    const current = window.location.pathname
+    const index = page.indexOf(current)
+    currentSection.update(() => index)
+  })
+
   $: switch ($currentSection) {
+    case -1:
+      navButtonDisabled = [true, true]
+      break
     case 0:
       navButtonDisabled = [true, false]
       break

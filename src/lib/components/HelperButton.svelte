@@ -32,6 +32,7 @@
   use:clickOutside={() => (helperActive = false)}
   on:click|preventDefault={() => (helperActive = !helperActive)}
   class="fixed bottom-5 right-5 text-zinc-500 dark:text-zinc-400 hover:scale-125 transform transition-all duration-200 ease-in-out"
+  aria-label="more info"
 >
   <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24">
     <path
