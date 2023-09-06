@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fly, slide, scale } from "svelte/transition"
+  import { fly, slide } from "svelte/transition"
   import Card from "$lib/shared/components/Card.svelte"
 </script>
 
@@ -24,7 +24,7 @@
           description="Personal landing page. The page you're currently on."
           stacks={["Svelte kit", "Tailwind CSS"]}
           url="https://mrmiss.dev"
-          source="https://github.com/mrmissx/personal-web"
+          source="https://github.com/mrmissx/personal_web"
         />
         <Card
           title="Anjani"
@@ -32,6 +32,19 @@
           stacks={["Python", "Mongo DB"]}
           url="https://t.me/anjani_bot"
           source="https://github.com/userbotindo/anjani"
+        />
+        <Card
+          title="userbotindo.com"
+          description="Userbotindo website with dashboard integration to manage Anjani."
+          stacks={["Next.js", "daisyUI"]}
+          url="https://userbotindo.com"
+        />
+        <Card
+          title="Telegram Forwarder"
+          description="Bot to forward message form channel/group."
+          stacks={["Python"]}
+          url="https://github.com/mrmissx/Telegram_Forwarder"
+          source="https://github.com/mrmissx/Telegram_Forwarder"
         />
       </div>
     </div>
