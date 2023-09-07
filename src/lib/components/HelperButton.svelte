@@ -1,0 +1,43 @@
+<script lang="ts">
+  import { scale } from "svelte/transition"
+
+  let helperActive = false
+
+  function clickOutside(el: HTMLElement, callback: () => void): { destroy: () => void } {
+    const onClick = (event: MouseEvent) =>
+      el && !el.contains(event.target as HTMLElement) && !event.defaultPrevented && callback()
+
+    document.addEventListener("click", onClick, true)
+
+    return {
+      destroy() {
+        document.removeEventListener("click", onClick, true)
+      }
+    }
+  }
+</script>
+
+{#if helperActive}
+  <div
+    transition:scale
+    class="fixed bottom-14 right-14 bg-gray-950 text-primary-light rounded-md opacity-100 translate-y-0 flex flex-col px-4 py-2"
+  >
+    <a class="py-2" rel="noopener noreferer" target="_blank" href="https://status.mrmiss.dev"
+      >Service Status</a
+    >
+    <a class="py-2" rel="noopener noreferer" href="/support">Support</a>
+  </div>
+{/if}
+<button
+  use:clickOutside={() => (helperActive = false)}
+  on:click|preventDefault={() => (helperActive = !helperActive)}
+  class="fixed bottom-5 right-5 text-zinc-500 dark:text-zinc-400 hover:scale-125 transform transition-all duration-200 ease-in-out"
+  aria-label="more info"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24">
+    <path
+      fill="currentColor"
+      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5c0-2.21-1.79-4-4-4z"
+    />
+  </svg>
+</button>

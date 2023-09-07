@@ -1,17 +1,14 @@
-module.exports = {
-  content: [
-    './pages/**/*.tsx',
-    './components/**/*.tsx',
-  ],
-  darkMode: 'class',
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{html,js,svelte,ts}"],
+  darkMode: "class",
   theme: {
     extend: {
-      height : {
-        '30v': '30vh',
-        '35v': '35vh',
-        '40v': '40vh'
+      colors: {
+        "primary-light": "#F5F5F5",
+        "primary-dark": "#212121"
       }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 }

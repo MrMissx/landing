@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mrmiss.dev
+
+# Sitemaps
+Sitemap: https://mrmiss.dev/sitemap.xml
