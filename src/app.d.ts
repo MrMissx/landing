@@ -7,6 +7,9 @@ declare global {
     // interface PageData {}
     // interface Platform {}
   }
+  declare interface Window {
+    dataLayer: any
+  }
 }
 
 declare module "svelte-icons/**/index.js" {
