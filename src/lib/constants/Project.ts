@@ -19,7 +19,7 @@ export const PROJECT: Project[] = [
     description: "Personal landing page. The page you're currently on.",
     stacks: ["Svelte kit", "Tailwind CSS"],
     url: "https://mrmiss.dev",
-    source: "https://github.com/mrmissx/personal_web"
+    source: "https://github.com/mrmissx/landing"
   },
   {
     title: "Anjani",
