@@ -27,7 +27,11 @@
   </script>
 </svelte:head>
 
-<button on:click={toogleTheme} class="absolute top-4 right-4" aria-label="theme toggle">
+<button
+  on:click|preventDefault={toogleTheme}
+  class="absolute top-4 right-4 hover:scale-125 transform transition-all duration-300 ease-in-out"
+  aria-label="theme toggle"
+>
   {#if $isDarkMode}
     <svg
       class="icon hover:scale-110 text-zinc-100"

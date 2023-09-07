@@ -6,21 +6,21 @@
   import FaCaretRight from "svelte-icons/fa/FaCaretRight.svelte"
 
   import { currentSection } from "$lib/shared/stores"
-  import { MainPage } from "$lib/shared/constants"
+  import { MAIN_PAGE } from "$lib/shared/constants"
 
   let navButtonDisabled = [true, false]
-  const max = MainPage.length
+  const max = MAIN_PAGE.length
 
   function scrollTo(action: "prev" | "next") {
     const toSection = action === "prev" ? $currentSection - 1 : $currentSection + 1
     if (toSection < 0 || toSection > max - 1) return
     currentSection.update(() => toSection)
-    goto(MainPage[toSection])
+    goto(MAIN_PAGE[toSection])
   }
 
   onMount(() => {
     const current = window.location.pathname
-    const index = MainPage.indexOf(current)
+    const index = MAIN_PAGE.indexOf(current)
     currentSection.update(() => index)
   })
 

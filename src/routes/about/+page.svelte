@@ -15,7 +15,7 @@
   class="flex justify-center items-center h-screen mx-10 md:mx-20 text-center gap-11"
 >
   <div class="flex flex-col gap-6">
-    <h2 in:slide={{ delay: 300 }} class="font-bold md:text-4xl text-2xl">About</h2>
+    <h2 in:slide={{ delay: 300 }} class="font-bold text-3xl md:text-4xl">About</h2>
     <div in:slide={{ delay: 500 }}>
       <span>Hi There! Greetings 👋 Thanks for dropping by.</span>
       <p class="mx-2 md:mx-40 xl:mx-60">
