@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { isDarkMode } from "$lib/shared/stores"
+  import { isDarkMode } from "$lib/stores"
 
   onMount(() => {
     isDarkMode.set(document.documentElement.classList.contains("dark"))

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { slide, fly } from "svelte/transition"
 
-  import { currentSection } from "$lib/shared/stores"
+  import { currentSection } from "$lib/stores"
   import Stack from "$lib/components/Stack.svelte"
 
   function goToFirst() {

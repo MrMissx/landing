@@ -1,6 +1,6 @@
 <script lang="ts">
   import FaAngleDoubleLeft from "svelte-icons/fa/FaAngleDoubleLeft.svelte"
-  import { currentSection } from "$lib/shared/stores"
+  import { currentSection } from "$lib/stores"
   import { goto } from "$app/navigation"
 
   let hidden = true

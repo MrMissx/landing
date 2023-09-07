@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte"
 
-  import { isDarkMode } from "$lib/shared/stores"
-  import { STACKS } from "$lib/shared/constants"
-  import type { Stack } from "$lib/shared/constants"
+  import { isDarkMode } from "$lib/stores"
+  import { STACKS } from "$lib/constants"
+  import type { Stack } from "$lib/constants"
 
   onMount(() => {
     $isDarkMode = document.documentElement.classList.contains("dark")

@@ -5,8 +5,8 @@
   import FaCaretLeft from "svelte-icons/fa/FaCaretLeft.svelte"
   import FaCaretRight from "svelte-icons/fa/FaCaretRight.svelte"
 
-  import { currentSection } from "$lib/shared/stores"
-  import { MAIN_PAGE } from "$lib/shared/constants"
+  import { currentSection } from "$lib/stores"
+  import { MAIN_PAGE } from "$lib/constants"
 
   let navButtonDisabled = [true, false]
   const max = MAIN_PAGE.length

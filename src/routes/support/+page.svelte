@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade, blur } from "svelte/transition"
-  import { currentSection } from "$lib/shared/stores"
+  import { currentSection } from "$lib/stores"
   currentSection.update(() => -1)
 </script>
 

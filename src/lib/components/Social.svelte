@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SOCIAL_LINKS } from "../shared/constants"
+  import { SOCIAL_LINKS } from "../constants"
 </script>
 
 <section class="flex justify-evenly mx-10 my-3">
