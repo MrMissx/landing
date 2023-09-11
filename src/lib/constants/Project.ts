@@ -15,6 +15,13 @@ export const PROJECT: Project[] = [
     source: "https://github.com/mrmissx/stashbin"
   },
   {
+    title: "Stashbin Backend",
+    description: "Stashbin Backend Service.",
+    stacks: ["Go", "Gin", "PostgreSQL"],
+    url: "https://stashbin.xyz",
+    source: "https://github.com/mrmissx/stashbin-backend"
+  },
+  {
     title: "Landing Page",
     description: "Personal landing page. The page you're currently on.",
     stacks: ["Svelte kit", "Tailwind CSS"],
