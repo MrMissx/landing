@@ -45,7 +45,7 @@
     <button
       disabled={navButtonDisabled[0]}
       id="prev"
-      class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 hover:dark:text-zinc-200 w-7 h-w-7 hover:scale-125 transform transition-all duration-300 ease-in-out"
+      class="w-7 h-w-7 nav-button"
       aria-label="back to top"
       on:click={() => scrollTo("prev")}
     >
@@ -54,7 +54,7 @@
     <button
       disabled={navButtonDisabled[1]}
       id="next"
-      class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 hover:dark:text-zinc-200 w-7 h-w-7 hover:scale-125 transform transition-all duration-300 ease-in-out"
+      class="w-7 h-w-7 nav-button"
       aria-label="back to top"
       on:click={() => scrollTo("next")}
     >

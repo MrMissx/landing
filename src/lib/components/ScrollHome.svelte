@@ -15,7 +15,7 @@
 
 <button
   class:hidden
-  class="fixed z-50 left-5 bottom-8 w-8 md:w-10 h-8 md:h-10 text-zinc-500 dark:text-zinc-400 hover:scale-125 transform transition-all duration-300 ease-in-out"
+  class="fixed z-50 left-5 bottom-5 w-8 md:w-10 h-8 md:h-10 nav-button"
   aria-label="back to top"
   on:click={redirectHome}
 >

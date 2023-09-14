@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -18,6 +18,19 @@ html {
   p {
     @apply text-zinc-900;
     @apply dark:text-zinc-100;
+  }
+
+  .nav-button {
+    -webkit-tap-highlight-color: transparent;
+    @apply hover:scale-125;
+    @apply transform;
+    @apply transition-all;
+    @apply duration-300;
+    @apply ease-in-out;
+    @apply text-zinc-500;
+    @apply dark:text-zinc-400;
+    @apply hover:text-zinc-700;
+    @apply hover:dark:text-zinc-200;
   }
 }
 
