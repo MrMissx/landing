@@ -2,6 +2,7 @@ import Css from "$lib/assets/icons/css.svg"
 import Docker from "$lib/assets/icons/docker.svg"
 import Firbase from "$lib/assets/icons/firebase.svg"
 import Git from "$lib/assets/icons/git.svg"
+import Go from "$lib/assets/icons/go.svg"
 import Html from "$lib/assets/icons/html.svg"
 import JavaScript from "$lib/assets/icons/javascript.svg"
 import MongoDb from "$lib/assets/icons/mongodb.svg"
@@ -27,6 +28,11 @@ export const STACKS: Stack[] = [
     label: "Python",
     icon: Python,
     url: "https://www.python.org/"
+  },
+  {
+    label: "Go",
+    icon: Go,
+    url: "https://go.dev/"
   },
   {
     label: "HTML",
