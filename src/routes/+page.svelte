@@ -11,7 +11,7 @@
   <div class="flex flex-col gap-6">
     <div in:slide={{ delay: 400 }}>
       <h2 class="text-gray-500 hover:text-black dark:hover:text-white md:text-4xl text-2xl">
-        Hi there👋🏻! My name is
+        Hi there👋🏻! I'm
       </h2>
       <h1 class="md:text-6xl text-5xl text-gray-950 dark:text-gray-50"><b>Gaung</b> Ramadhan</h1>
     </div>

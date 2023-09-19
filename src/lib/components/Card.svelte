@@ -17,14 +17,14 @@
   }
 </script>
 
-<div class="rounded-lg p-4 overflow-hidden shadow-lg border-2 border-rose-300">
+<div
+  class="rounded-lg p-4 overflow-hidden shadow-lg border-2 border-rose-300 flex flex-col justify-between"
+>
   <a href={url} rel="noopener noreferer" target="_blank">
     <h5 class="text-xl font-bold">{title}</h5>
   </a>
   <p class="my-2 text-sm">{description}</p>
-  {#if source === ""}
-    <span />
-  {:else}
+  {#if source !== ""}
     <a class="flex items-center text-sm" href={source} rel="noopener noreferer" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path
