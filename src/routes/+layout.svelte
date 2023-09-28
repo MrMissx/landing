@@ -9,11 +9,10 @@
   import HelperButton from "$lib/components/HelperButton.svelte"
   import NavigationButton from "$lib/components/NavigationButton.svelte"
 
-  const DESCRIPTION = "Welcome to my personal site."
+  const DESCRIPTION = "Visit my personal site for my portfolio and blog posts."
   const TWITTER_HANDLE = "@mrmissx"
 
   const name = "Gaung Ramadhan"
-  let path = ""
 
   $: path = $page.url.pathname.substring(1)
 </script>
@@ -21,7 +20,8 @@
 <svelte:head>
   <title>{path === "" ? name : `${name} | ${path}`}</title>
 
-  <meta name="description" content="Welcome to my personal site." />
+  <meta name="keywords" content="gaung, gaung ramadhan, mrmiss" />
+  <meta name="description" content={DESCRIPTION} />
   <link rel="canonical" href={$page.url.href} />
 
   <meta property="og:type" content="article" />
