@@ -10,14 +10,14 @@ export const PROJECT: Project[] = [
   {
     title: "Stashbin",
     description: "Simple and free pastebin service",
-    stacks: ["Next.js", "Supabase"],
+    stacks: ["Next.js"],
     url: "https://stashbin.xyz",
     source: "https://github.com/mrmissx/stashbin"
   },
   {
     title: "Stashbin Backend",
     description: "Stashbin Backend Service.",
-    stacks: ["Go", "Gin", "PostgreSQL"],
+    stacks: ["Go", "PostgreSQL"],
     url: "https://stashbin.xyz",
     source: "https://github.com/mrmissx/stashbin-backend"
   },
