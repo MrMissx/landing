@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fly, slide } from "svelte/transition"
+  import { fly, slide, scale } from "svelte/transition"
   import Social from "$lib/components/Social.svelte"
 </script>
 
@@ -30,6 +30,16 @@
     </div>
     <div in:fly={{ delay: 900 }}>
       <Social />
+    </div>
+    <div in:scale={{ delay: 1300 }} class="hover:scale-110 ease-in-out duration-200">
+      <a
+        href="https://blog.mrmiss.dev"
+        class="dark:bg-gray-200 bg-zinc-800 text-white dark:text-gray-800 p-2 rounded"
+        aria-label="Blog"
+        role="button"
+      >
+        Blog
+      </a>
     </div>
   </div>
 </main>
