@@ -32,12 +32,12 @@
       </li>
       <li>
         Bitcoin: <span class="text-blue-700 dark:text-blue-400 break-all">
-          bc1q9wqkuev0xle04vfcuqtq9r6s7ywl6nq5ejdj66
+          bc1qk43zcj7yzlwdj5xg6xsj5frqt7cqx8jkqwxmpq
         </span>
       </li>
       <li>
         Ethereum: <span class="text-blue-700 dark:text-blue-400 break-all">
-          0x9e4b58fD32218683E68574F2dd948eCc624aC1f8
+          0x72599B85431728A4e2AD73826Cc076fBD689335D
         </span>
       </li>
     </ul>
