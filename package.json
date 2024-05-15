@@ -5,13 +5,14 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "pnpm run generate:version && vite dev",
+    "build": "pnpm run generate:version && vite build",
+    "preview": "pnpm run generate:version && vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "generate:version": "echo \"export const version = '$(git describe --exact-match --tags 2> /dev/null || echo $(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD))'\" > ./src/version.ts"
   },
   "dependencies": {
     "svelte-icons": "^2.1.0"
