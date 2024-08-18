@@ -9,13 +9,13 @@
   out:blur
   class="flex justify-center items-center h-screen mx-10 md:mx-20 text-center"
 >
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 mx-[10%]">
     <h1 class="text-3xl lg:text-4xl">💖 Support Me 💖</h1>
-    <p>
-      Hi, thank you for comming here. Your supports means a lot for me to keep my project alive and
-      updated.
+    <p class="text-left md:text-center">
+      Thanks for stopping by. Your support helps keep my projects running and, yes, it even pays my
+      server bills (and maybe a coffee or two)! Every little bit counts.
     </p>
-    <ul class="list-disc list-inside mt-3 text-left">
+    <ul class="list-disc list-outside mt-3 text-left">
       <li>
         <a class="text-blue-700 dark:text-blue-400" href="https://saweria.co/mrmiss" rel="nofollow">
           Saweria

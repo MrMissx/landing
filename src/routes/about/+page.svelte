@@ -16,12 +16,19 @@
 >
   <div class="flex flex-col gap-6">
     <h2 in:slide={{ delay: 300 }} class="font-bold text-3xl md:text-4xl">About</h2>
-    <div in:slide={{ delay: 500 }}>
-      <span>Hi There! Greetings 👋 Thanks for dropping by.</span>
-      <p class="mx-2 md:mx-40 xl:mx-60">
-        I'm a Software Developer from Indonesia, starting my coding journey in 2018. Feel free reach
-        out to me through my contact details on the <a
-          class="text-blue-500"
+    <div class="mx-2 md:mx-40 xl:mx-60" in:slide={{ delay: 500 }}>
+      <p class="mb-3">Hi There! Greetings 👋 Thanks for dropping by.</p>
+      <p>
+        I'm a Software Engineer from Indonesia. <br />From frontend to backend, I've got it covered.
+        Backend's my favorite, and I'm no stranger to devops.
+      </p>
+      <p>
+        Wanna see what I'm up to? Check out my
+        <a class="text-blue-500 hover:underline" href="https://blog.mrmiss.dev"> blog</a>.
+      </p>
+      <p>
+        Feel free to reach out - contact info's on the <a
+          class="text-blue-500 hover:underline"
           href="/"
           on:click={goToFirst}>home page</a
         >.

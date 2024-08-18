@@ -23,7 +23,7 @@
         Mr.Miss
       </span>
       <p in:slide={{ delay: 800 }} class="mt-2 text-lg md:text-xl">
-        Final Year student who like to code this and that.
+        Software Engineer. 
         <br />
         Creating bugs and breaking things everyday.
       </p>

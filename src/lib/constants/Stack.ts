@@ -1,18 +1,17 @@
-import Css from "$lib/assets/icons/css.svg"
 import Docker from "$lib/assets/icons/docker.svg"
 import Firbase from "$lib/assets/icons/firebase.svg"
 import Git from "$lib/assets/icons/git.svg"
 import Go from "$lib/assets/icons/go.svg"
-import Html from "$lib/assets/icons/html.svg"
-import JavaScript from "$lib/assets/icons/javascript.svg"
 import MongoDb from "$lib/assets/icons/mongodb.svg"
+import MySQL from "$lib/assets/icons/mysql.svg"
 import NextJs from "$lib/assets/icons/nextjs.svg"
 import NextJsDark from "$lib/assets/icons/nextjs-dark.svg"
-import NodeJs from "$lib/assets/icons/nodejs.svg"
 import Posgre from "$lib/assets/icons/postgre.svg"
 import Python from "$lib/assets/icons/python.svg"
 import React from "$lib/assets/icons/react.svg"
+import Solid from "$lib/assets/icons/solid.svg"
 import Svelte from "$lib/assets/icons/svelte.svg"
+import Traefik from "$lib/assets/icons/traefik.svg"
 import TypeScript from "$lib/assets/icons/typescript.svg"
 import Tailwind from "$lib/assets/icons/tailwind.svg"
 
@@ -35,24 +34,9 @@ export const STACKS: Stack[] = [
     url: "https://go.dev/"
   },
   {
-    label: "HTML",
-    icon: Html,
-    url: "https://html.spec.whatwg.org/"
-  },
-  {
-    label: "CSS",
-    icon: Css,
-    url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
-  },
-  {
     label: "Tailwind",
     icon: Tailwind,
     url: "https://tailwindcss.com/"
-  },
-  {
-    label: "JavaScript",
-    icon: JavaScript,
-    url: "https://www.javascript.com/"
   },
   {
     label: "TypeScript",
@@ -60,9 +44,9 @@ export const STACKS: Stack[] = [
     url: "https://www.typescriptlang.org/"
   },
   {
-    label: "Node.js",
-    icon: NodeJs,
-    url: "https://nodejs.org/"
+    label: "Solid",
+    icon: Solid,
+    url: "https://solidjs.com/"
   },
   {
     label: "Svelte",
@@ -81,6 +65,16 @@ export const STACKS: Stack[] = [
     url: "https://nextjs.org/"
   },
   {
+    label: "PostgreSQL",
+    icon: Posgre,
+    url: "https://www.postgresql.org/"
+  },
+  {
+    label: "MySQL",
+    icon: MySQL,
+    url: "https://www.mysql.com/"
+  },
+  {
     label: "MongoDB",
     icon: MongoDb,
     url: "https://www.mongodb.com/"
@@ -91,14 +85,14 @@ export const STACKS: Stack[] = [
     url: "https://firebase.google.com/"
   },
   {
-    label: "PostgreSQL",
-    icon: Posgre,
-    url: "https://www.postgresql.org/"
-  },
-  {
     label: "Docker",
     icon: Docker,
     url: "https://www.docker.com/"
+  },
+  {
+    label: "Traefik",
+    icon: Traefik,
+    url: "https://traefik.io/"
   },
   {
     label: "Git",
