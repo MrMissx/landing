@@ -1,6 +1,5 @@
 <script lang="ts">
   import { scale } from "svelte/transition"
-  import { version } from "../../version"
 
   let helperActive = false
 
@@ -28,7 +27,6 @@
     >
     <a class="py-2 hover:underline" href="/support">Support</a>
     <a class="py-2 hover:underline" href="https://blog.mrmiss.dev">Blog</a>
-    <span class="text-xs">{version}</span>
   </div>
 {/if}
 <button
