@@ -40,5 +40,11 @@ export const PROJECT: Project[] = [
     stacks: ["Python"],
     url: "https://github.com/mrmissx/Telegram_Forwarder",
     source: "https://github.com/mrmissx/Telegram_Forwarder"
+  },
+  {
+    title: "Spam Detection API",
+    description: "API for Spam Detection that specifically trained on Telegram messages to detect and prevent spam message.",
+    stacks: ["Python", "PostgreSQL"],
+    url: "https://github.com/userbotindo/api-docs"
   }
 ]
