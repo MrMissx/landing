@@ -1,9 +1,13 @@
-import Github from "svelte-icons/fa/FaGithub.svelte"
-import Linkedin from "svelte-icons/fa/FaLinkedin.svelte"
-import Telegram from "svelte-icons/fa/FaTelegram.svelte"
-import Twitter from "svelte-icons/fa/FaTwitter.svelte"
-import Instagram from "svelte-icons/fa/FaInstagram.svelte"
-import Email from "svelte-icons/md/MdMailOutline.svelte"
+// import Linkedin from "$lib/assets/icons/linkedin.svg"
+// import Instagram from "$lib/assets/icons/instagram.svg"
+// import Twitter from "$lib/assets/icons/twitter.svg"
+
+import Github from "virtual:icons/mdi/github"
+import Telegram from "virtual:icons/ic/baseline-telegram"
+import Email from "virtual:icons/mdi/email"
+import Linkedin from "virtual:icons/mdi/linkedin"
+import Instagram from "~icons/mdi/instagram"
+import Twitter from "~icons/bi/twitter-x"
 
 export const SOCIAL_LINKS = [
   {
@@ -38,7 +42,7 @@ export const SOCIAL_LINKS = [
   },
   {
     link: "https://twitter.com/mrmissx",
-    hoverColor: "hover:text-blue-400 dark:hover:text-blue-400",
+    hoverColor: "hover:text-gray-800 dark:hover:text-gray-200",
     label: "Twitter",
     icon: Twitter
   }

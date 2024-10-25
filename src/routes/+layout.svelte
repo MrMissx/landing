@@ -9,12 +9,14 @@
   import HelperButton from "$lib/components/HelperButton.svelte"
   import NavigationButton from "$lib/components/NavigationButton.svelte"
 
+  let { children } = $props()
+
   const DESCRIPTION = "Visit my personal site for my portfolio and blog posts."
   const TWITTER_HANDLE = "@mrmissx"
 
   const name = "Gaung Ramadhan"
 
-  $: path = $page.url.pathname.substring(1)
+  let path = $derived($page.url.pathname.substring(1))
 </script>
 
 <svelte:head>
@@ -38,7 +40,7 @@
 <Analytics />
 <div class="dark:text-primary-light text-primary-dark">
   <ThemeToggle />
-  <slot />
+  {@render children()}
   <ScrollHome />
   <NavigationButton />
   <HelperButton />

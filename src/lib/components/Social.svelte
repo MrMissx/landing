@@ -12,7 +12,7 @@
       aria-label={it.label}
       role="button"
     >
-      <svelte:component this={it.icon} {...it.icon} />
+      <it.icon class="h-8 w-8 md:w-10 md:h-10" {...it.icon} />
     </a>
   {/each}
 </section>

@@ -30,7 +30,7 @@
         Feel free to reach out - contact info's on the <a
           class="text-blue-500 hover:underline"
           href="/"
-          on:click={goToFirst}>home page</a
+          onclick={goToFirst}>home page</a
         >.
       </p>
     </div>

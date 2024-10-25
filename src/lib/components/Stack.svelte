@@ -9,7 +9,7 @@
     $isDarkMode = document.documentElement.classList.contains("dark")
   })
 
-  $: getIcon = (it: Stack) => {
+  function getIcon(it: Stack) {
     if ($isDarkMode && it.iconDark) return it.iconDark
     return it.icon
   }

@@ -1,7 +1,11 @@
 <script lang="ts">
   import { fade, blur } from "svelte/transition"
   import { currentSection } from "$lib/stores"
-  currentSection.update(() => -1)
+  import { onMount } from "svelte"
+
+  onMount(() => {
+    currentSection.update(() => -1)
+  })
 </script>
 
 <section

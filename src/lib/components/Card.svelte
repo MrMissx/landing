@@ -1,11 +1,15 @@
 <script lang="ts">
-  export let title: string
-  export let description: string
-  export let url: string
-  export let source: string = ""
-  export let stacks: string[]
+  interface Props {
+    title: string
+    description: string
+    url: string
+    source?: string
+    stacks: string[]
+  }
+  let { title, description, url, source, stacks }: Props = $props()
 
   const getParsedSource = () => {
+    if (!source) return ""
     if (source.includes("github.com")) {
       const pattern = /^(?:https?:\/\/)?(?:www\.)?github\.com\/([\S]+)\/([\S]+)$/
       const match = source.match(pattern)
@@ -24,7 +28,7 @@
     <h5 class="text-xl font-bold">{title}</h5>
   </a>
   <p class="my-2 text-sm">{description}</p>
-  {#if source !== ""}
+  {#if source}
     <a class="flex items-center text-sm" href={source} rel="noopener noreferer" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path

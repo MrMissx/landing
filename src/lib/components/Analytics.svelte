@@ -3,7 +3,7 @@
   import { page } from "$app/stores"
   import { env } from "$env/dynamic/public"
 
-  $: {
+  $effect(() => {
     if (browser && env.PUBLIC_GOOGLE_ANALYTICS) {
       window.dataLayer = window.dataLayer || []
       window.gtag = function gtag(): void {
@@ -12,15 +12,16 @@
       window.gtag("js", new Date())
       window.gtag("config", env.PUBLIC_GOOGLE_ANALYTICS)
     }
-  }
-  $: {
+  })
+
+  $effect(() => {
     if (env.PUBLIC_GOOGLE_ANALYTICS && typeof gtag !== "undefined") {
       gtag("config", env.PUBLIC_GOOGLE_ANALYTICS, {
         page_title: document.title,
         page_path: $page.url.pathname
       })
     }
-  }
+  })
 </script>
 
 <svelte:head>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { scale } from "svelte/transition"
 
-  let helperActive = false
+  let helperActive = $state(false)
 
   function clickOutside(el: HTMLElement, callback: () => void): { destroy: () => void } {
     const onClick = (event: MouseEvent) =>
@@ -31,7 +31,10 @@
 {/if}
 <button
   use:clickOutside={() => (helperActive = false)}
-  on:click|preventDefault={() => (helperActive = !helperActive)}
+  onclick={(e) => {
+    e.preventDefault()
+    helperActive = !helperActive
+  }}
   class="fixed bottom-5 right-5 nav-button"
   aria-label="more info"
 >

@@ -2,13 +2,13 @@
   import { goto } from "$app/navigation"
   import { onMount } from "svelte"
 
-  import FaCaretLeft from "svelte-icons/fa/FaCaretLeft.svelte"
-  import FaCaretRight from "svelte-icons/fa/FaCaretRight.svelte"
+  import FaCaretRight from "virtual:icons/mdi/menu-right"
+  import FaCaretLeft from "virtual:icons/mdi/menu-left"
 
   import { currentSection } from "$lib/stores"
   import { MAIN_PAGE } from "$lib/constants"
 
-  let navButtonDisabled = [true, false]
+  let navButtonDisabled = $state([true, false])
   const max = MAIN_PAGE.length
 
   function scrollTo(action: "prev" | "next") {
@@ -24,20 +24,22 @@
     currentSection.update(() => index)
   })
 
-  $: switch ($currentSection) {
-    case -1:
-      navButtonDisabled = [true, true]
-      break
-    case 0:
-      navButtonDisabled = [true, false]
-      break
-    case max - 1:
-      navButtonDisabled = [false, true]
-      break
-    default:
-      navButtonDisabled = [false, false]
-      break
-  }
+  $effect(() => {
+    switch ($currentSection) {
+      case -1:
+        navButtonDisabled = [true, true]
+        break
+      case 0:
+        navButtonDisabled = [true, false]
+        break
+      case max - 1:
+        navButtonDisabled = [false, true]
+        break
+      default:
+        navButtonDisabled = [false, false]
+        break
+    }
+  })
 </script>
 
 <nav class="fixed w-full bottom-0 pt-7 bg-gradient-to-t from-zinc-100 dark:from-zinc-900 from-40%">
@@ -45,20 +47,20 @@
     <button
       disabled={navButtonDisabled[0]}
       id="prev"
-      class="w-7 h-w-7 nav-button"
+      class="nav-button"
       aria-label="back to top"
-      on:click={() => scrollTo("prev")}
+      onclick={() => scrollTo("prev")}
     >
-      <FaCaretLeft />
+      <FaCaretLeft class="w-24 h-24" />
     </button>
     <button
       disabled={navButtonDisabled[1]}
       id="next"
-      class="w-7 h-w-7 nav-button"
+      class="nav-button"
       aria-label="back to top"
-      on:click={() => scrollTo("next")}
+      onclick={() => scrollTo("next")}
     >
-      <FaCaretRight />
+      <FaCaretRight class="w-24 h-24" />
     </button>
   </div>
 </nav>

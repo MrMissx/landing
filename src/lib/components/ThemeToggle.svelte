@@ -6,7 +6,8 @@
     isDarkMode.set(document.documentElement.classList.contains("dark"))
   })
 
-  const toogleTheme = () => {
+  const toggleTheme = (e: MouseEvent) => {
+    e.preventDefault()
     document.documentElement.classList.toggle("dark")
     $isDarkMode = !$isDarkMode
     localStorage.theme = $isDarkMode ? "dark" : "light"
@@ -28,7 +29,7 @@
 </svelte:head>
 
 <button
-  on:click|preventDefault={toogleTheme}
+  onclick={toggleTheme}
   class="absolute top-4 right-4 hover:scale-125 transform transition-all duration-300 ease-in-out"
   aria-label="theme toggle"
 >
