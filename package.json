@@ -42,5 +42,10 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "motion": "^11.11.17",
+    "tailwind-merge": "^2.5.4"
+  }
 }

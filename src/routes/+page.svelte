@@ -23,7 +23,7 @@
         Mr.Miss
       </span>
       <p in:slide={{ delay: 800 }} class="mt-2 text-lg md:text-xl">
-        Software Engineer. 
+        Software Engineer.
         <br />
         Creating bugs and breaking things everyday.
       </p>
