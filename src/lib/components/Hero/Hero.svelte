@@ -12,22 +12,9 @@
       )
     })
 
-    inView("#lamp-bar", (it) => {
-      animate(
-        it.target,
-        { width: "35.5rem", opacity: 1 },
-        {
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut"
-        }
-      )
-    })
-
     inView("#hero-content", (it) => {
       animate(
         it.target,
-        // { opacity: 1, y: -200 },
         { opacity: 1, y: 0 },
         {
           delay: 0.3,
@@ -49,15 +36,11 @@
 </script>
 
 <section
-  class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-zinc-950 w-full rounded-md z-0"
+  class="snap-center snap-always relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-zinc-950 w-full rounded-md z-0"
 >
   <div
     class="relative flex w-full flex-1 scale-y-125 items-center top-12 justify-center isolate z-0"
   >
-    <div
-      id="lamp-bar"
-      class="absolute inset-auto z-50 h-1 rounded-lg w-[30rem] -translate-y-[7rem] bg-amber-300"
-    ></div>
     <div
       id="ray"
       class="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-amber-300 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
@@ -125,11 +108,6 @@
   #ray {
     background-image: conic-gradient(var(--conic-position), var(--tw-gradient-stops));
     opacity: 0.5;
-    width: 15rem;
-  }
-
-  #lamp-bar {
-    opacity: 0.75;
     width: 15rem;
   }
 

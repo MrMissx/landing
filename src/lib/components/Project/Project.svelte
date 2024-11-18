@@ -4,7 +4,7 @@
 </script>
 
 <section
-  class="flex justify-center items-center min-h-screen mt-7 md:mt-0 first-letter:md:mx-20 mx-10 text-center gap-11"
+  class="flex justify-center items-center mt-7 md:mt-0 first-letter:md:mx-20 text-center gap-11 container mx-auto max-w-[85rem] space-y-12 py-20 sm:px-6 lg:px-8"
 >
   <div class="flex flex-col gap-6">
     <h2 class="font-bold md:text-4xl text-2xl">Featured Project</h2>

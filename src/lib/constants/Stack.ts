@@ -9,7 +9,6 @@ import NextJsDark from "$lib/assets/icons/nextjs-dark.svg"
 import Posgre from "$lib/assets/icons/postgre.svg"
 import Python from "$lib/assets/icons/python.svg"
 import React from "$lib/assets/icons/react.svg"
-import Solid from "$lib/assets/icons/solid.svg"
 import Svelte from "$lib/assets/icons/svelte.svg"
 import Traefik from "$lib/assets/icons/traefik.svg"
 import TypeScript from "$lib/assets/icons/typescript.svg"
@@ -42,11 +41,6 @@ export const STACKS: Stack[] = [
     label: "TypeScript",
     icon: TypeScript,
     url: "https://www.typescriptlang.org/"
-  },
-  {
-    label: "Solid",
-    icon: Solid,
-    url: "https://solidjs.com/"
   },
   {
     label: "Svelte",
