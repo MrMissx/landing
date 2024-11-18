@@ -25,7 +25,7 @@ export const PROJECT: Project[] = [
     title: "Anjani",
     description: "Telegram management bot.",
     stacks: ["Python", "Mongo DB"],
-    url: "https://t.me/anjani_bot",
+    url: "https://t.me/dAnjani_bot",
     source: "https://github.com/userbotindo/anjani"
   },
   {
