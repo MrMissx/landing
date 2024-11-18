@@ -11,13 +11,11 @@ html {
 @layer base {
   body {
     font-family: "Plus Jakarta Sans", "Bebas Neue", sans-serif;
-    @apply bg-zinc-100;
-    @apply dark:bg-zinc-900;
+    @apply bg-zinc-950;
   }
 
   p {
-    @apply text-zinc-900;
-    @apply dark:text-zinc-100;
+    @apply text-zinc-100;
   }
 
   .nav-button {

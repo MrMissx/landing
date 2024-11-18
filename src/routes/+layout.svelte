@@ -38,10 +38,10 @@
   <meta name="twitter:description" content={DESCRIPTION} />
 </svelte:head>
 <Analytics />
-<div class="dark:text-primary-light text-primary-dark">
+<div class="text-primary-light">
   <ThemeToggle />
   {@render children()}
   <ScrollHome />
-  <NavigationButton />
-  <HelperButton />
+  <!-- <NavigationButton /> -->
+  <!-- <HelperButton /> -->
 </div>
